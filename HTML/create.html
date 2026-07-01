@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>請求書作成 | nanacone</title>
+  <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+<body>
+
+  <nav class="topbar">
+    <div class="topbar-inner">
+      <div class="logo">nanacone</div>
+      <button class="menu-btn">☰</button>
+    </div>
+  </nav>
+
+  <main class="create-page">
+
+    <div class="step-flow">
+      <div class="flow-step active">
+        <span>1</span>
+        <p>テンプレ選択</p>
+      </div>
+
+      <div class="flow-line"></div>
+
+      <div class="flow-step active">
+        <span>2</span>
+        <p>入力</p>
+      </div>
+
+      <div class="flow-line"></div>
+
+      <div class="flow-step">
+        <span>3</span>
+        <p>ダウンロード</p>
+      </div>
+    </div>
+
+    <div class="create-layout">
+
+      <section class="form-panel">
+  <h1>請求書の情報を入力</h1>
+
+  <h3>請求先情報</h3>
+
+  <label>
+    請求先名
+    <input id="client-name" type="text" placeholder="例：株式会社サンプル">
+  </label>
+
+  <h3>請求書情報</h3>
+
+  <label>
+    発行日
+    <input id="issue-date" type="date">
+  </label>
+
+  <label>
+    請求書番号
+    <input id="invoice-number" type="text" placeholder="例：INV-2026001">
+  </label>
+
+  <h3>自社情報</h3>
+
+  <label>
+    会社名
+    <input id="company-name" type="text" placeholder="例：株式会社nanacone">
+  </label>
+
+  <label>
+  郵便番号
+  <input id="company-postcode"
+         type="text"
+         placeholder="例：123-4567">
+</label>
+
+<label>
+  住所
+  <input id="company-address">
+</label>
+
+  <label>
+    電話番号
+    <input id="company-tel" type="text" placeholder="例：03-1234-5678">
+  </label>
+
+  <label>
+    登録番号
+    <input id="company-number" type="text" placeholder="例：T1234567890123">
+  </label>
+
+  <label>
+  　角印画像
+  　<input type="file" id="stamp-upload" accept="image/*">
+</label>
+
+  <h3>明細</h3>
+
+<div id="items-container">
+  <div class="item-input-row">
+    <input class="item-name" type="text" placeholder="品目" value="デザイン制作費">
+    <input class="item-qty" type="number" value="1">
+    <select class="item-unit">
+      <option value="式">式</option>
+      <option value="個">個</option>
+      <option value="件">件</option>
+      <option value="時間">時間</option>
+      <option value="日">日</option>
+      <option value="月">月</option>
+    </select>
+    <input class="item-unit-price" type="number" value="50000">
+  </div>
+</div>
+
+<button id="add-item-button" type="button">＋ 明細行を追加</button>
+
+<h3>振込先</h3>
+<label>
+  銀行名
+  <input id="bank-name" type="text" placeholder="例：〇〇銀行">
+</label>
+
+<label>
+  支店名
+  <input id="bank-branch" type="text" placeholder="例：〇〇支店">
+</label>
+
+<label>
+  口座番号
+  <input id="bank-account" type="text" placeholder="例：1234567">
+</label>
+
+  <h3>支払い期日</h3>
+
+<input
+  id="payment-date"
+  type="date"
+/>
+
+  <h3>備考</h3>
+
+  <textarea
+    id="note"
+    rows="4"
+    placeholder="備考を入力"
+  ></textarea>
+
+</section>
+
+      <section class="preview-panel">
+  <div class="invoice-preview invoice-style-simple">
+    <div class="sample-watermark">SAMPLE</div>
+
+    <div class="invoice-info">
+  <p>
+    発行日：
+    <span id="preview-issue-date">
+      2026年○月○日
+    </span>
+  </p>
+
+  <p>
+    請求書番号：
+    <span id="preview-invoice-number">
+      INV-2026001
+    </span>
+  </p>
+</div>
+
+
+    <h2 class="invoice-title">請 求 書</h2>
+
+   <div class="invoice-client">
+  <span class="client-name-line">
+    <span id="preview-client">〇〇〇〇御中・様</span>
+  </span>
+</div>
+
+      <div class="invoice-company">
+  <h3 id="preview-company-name">〇〇会社</h3>
+
+  <p id="preview-company-postcode">
+  〒〇〇〇-〇〇〇〇
+</p>
+
+<p id="preview-company-address">
+  東京都〇〇区〇〇
+</p>
+
+  <p>
+    TEL：
+    <span id="preview-company-tel">
+      〇〇-〇〇-〇〇
+    </span>
+  </p>
+
+  <p>
+    登録番号：
+    <span id="preview-company-number">
+      T
+    </span>
+  </p>
+
+  <div class="invoice-stamp">
+  <span id="stamp-placeholder">角印</span>
+  <img id="stamp-preview" src="" alt="">
+</div>
+</div>
+    </div>
+
+    <p class="invoice-message">下記の通りご請求申し上げます。</p>
+
+    <div class="invoice-total-box">
+      <span>ご請求金額</span>
+      <strong>￥ <span id="preview-grand-total">50,000</span> -（税込）</strong>
+    </div>
+
+    <table class="invoice-table">
+  <colgroup>
+  <col class="col-item">
+  <col class="col-qty">
+  <col class="col-unit">
+  <col class="col-price">
+  <col class="col-amount">
+</colgroup>
+
+  <thead>
+  <tr>
+    <th>内容・品名</th>
+    <th>数量</th>
+    <th>単位</th>
+    <th>単価（税抜）</th>
+    <th>金額（税抜）</th>
+  </tr>
+</thead>
+
+  <tbody id="preview-items-body">
+  </tbody>
+</table>
+
+<div class="invoice-note">
+  <strong>備考欄　　</strong>
+  <span id="preview-note"></span>
+</div>
+
+    <div class="bank-box">
+  <strong>お振込先</strong>
+  <p>
+    <span id="preview-bank-name">〇〇銀行</span>
+    <span id="preview-bank-branch">〇〇支店</span>
+  </p>
+  <p>
+    普通　
+    <span id="preview-bank-account">123456</span>
+  </p>
+  <p>※振込手数料はご負担くださいますようお願いいたします。</p>
+  <p>
+  ※支払い期日：
+  <span id="preview-payment-date">
+    2026年○月○日
+  </span>
+</p>
+</div>
+  </div>
+</section>
+<button id="pdf-download-button" type="button">
+  PDFダウンロード
+</button>
+    </div>
+
+  </main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script src="../js/modal.js"></script>
+<script src="../js/preview.js"></script>
+<script src="../js/items.js"></script>
+<script src="../js/storage.js"></script>
+<script src="../js/stamp.js"></script>
+<script src="../js/pdf.js"></script>
+<script src="../js/script.js"></script>
+
+</body>
+</html>
