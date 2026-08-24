@@ -3,15 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>請求書作成 | nanacone</title>
+  <title>請求書作成 | ナナコネ</title>
   <link rel="stylesheet" href="../CSS/styles.css">
+  <link rel="stylesheet" href="../CSS/mobile.css">
 </head>
-<body>
+<body class="create-body">
 
   <nav class="topbar">
     <div class="topbar-inner">
-      <div class="logo">nanacone</div>
-      <button class="menu-btn">☰</button>
+      <div class="logo">ナナコネ
+      </div>
+      <a href="./mypage.html" class="header-home" aria-label="マイページ">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 12c2.7614 0 5-2.2386 5-5s-2.2386-5-5-5-5 2.2386-5 5 2.2386 5 5 5z" fill="currentColor"/>
+          <path d="M3 20c0-3.866 3.582-7 9-7s9 3.134 9 7v1H3v-1z" fill="currentColor"/>
+        </svg>
+      </a>
     </div>
   </nav>
 
@@ -46,27 +53,46 @@
   <h3>請求先情報</h3>
 
   <label>
-    請求先名
-    <input id="client-name" type="text" placeholder="例：株式会社サンプル">
-  </label>
+  請求先名
+  <input
+    id="client-name"
+    type="text"
+    placeholder="例：株式会社サンプル"
+    data-preview-target="#preview-client"
+  >
+</label>
 
   <h3>請求書情報</h3>
 
   <label>
     発行日
-    <input id="issue-date" type="date">
+    <input
+  id="issue-date"
+  type="date"
+  data-preview-target="#preview-issue-date"
+>
   </label>
 
-  <label>
-    請求書番号
-    <input id="invoice-number" type="text" placeholder="例：INV-2026001">
-  </label>
+ <label>
+  請求書番号
+  <input
+    id="invoice-number"
+    type="text"
+    placeholder="例：INV-2026001"
+    data-preview-target="#preview-invoice-number"
+  >
+</label>
 
-  <h3>自社情報</h3>
+<h3>自社情報</h3>
 
   <label>
     会社名
-    <input id="company-name" type="text" placeholder="例：株式会社nanacone">
+    <input
+  id="company-name"
+  type="text"
+  placeholder="例：株式会社サンプル"
+  data-preview-target="#preview-company-name"
+>
   </label>
 
   <label>
@@ -95,26 +121,51 @@
   　角印画像
   　<input type="file" id="stamp-upload" accept="image/*">
 </label>
+<div style="margin-top:8px;">
+  <button id="remove-stamp-button" type="button" style="padding:6px 10px; border-radius:8px; border:1px solid #d1d5db; background:#fff;">画像を削除</button>
+</div>
 
-  <h3>明細</h3>
+ <h3>明細</h3>
 
 <div id="items-container">
   <div class="item-input-row">
-    <input class="item-name" type="text" placeholder="品目" value="デザイン制作費">
-    <input class="item-qty" type="number" value="1">
-    <select class="item-unit">
-      <option value="式">式</option>
-      <option value="個">個</option>
-      <option value="件">件</option>
-      <option value="時間">時間</option>
-      <option value="日">日</option>
-      <option value="月">月</option>
-    </select>
-    <input class="item-unit-price" type="number" value="50000">
+
+    <input
+      class="item-name"
+      type="text"
+      placeholder="品目"
+      value="デザイン制作費"
+    >
+
+    <input
+      class="item-qty"
+      type="number"
+      value="1"
+    >
+
+   <input
+  class="item-unit"
+  type="text"
+  value="式"
+  placeholder="例：個、式、L"
+>
+
+    <input
+      class="item-unit-price"
+      type="number"
+      value="50000"
+    >
+
+    <button type="button" class="delete-item-button">
+      削除
+    </button>
+
   </div>
 </div>
 
-<button id="add-item-button" type="button">＋ 明細行を追加</button>
+<button id="add-item-button" type="button">
+  ＋ 明細行を追加
+</button>
 
 <h3>振込先</h3>
 <label>
@@ -141,16 +192,29 @@
 
   <h3>備考</h3>
 
-  <textarea
-    id="note"
-    rows="4"
-    placeholder="備考を入力"
-  ></textarea>
+<textarea
+  id="note"
+  rows="4"
+  placeholder="備考を入力"
+></textarea>
+
+<!-- PC版 確認ボタン -->
+<div class="create-pc-actions">
+  <button id="preview-confirm-button" type="button">
+    入力内容を確認する
+  </button>
+</div>
 
 </section>
 
+      <div class="mobile-form-navigation">
+        <button id="mobile-back-button" type="button">戻る</button>
+        <button id="mobile-next-button" type="button">次へ</button>
+      </div>
+
       <section class="preview-panel">
-  <div class="invoice-preview invoice-style-simple">
+  <div class="preview-canvas">
+    <div class="invoice-preview invoice-style-simple">
     <div class="sample-watermark">SAMPLE</div>
 
     <div class="invoice-info">
@@ -172,45 +236,53 @@
 
     <h2 class="invoice-title">請 求 書</h2>
 
-   <div class="invoice-client">
-  <span class="client-name-line">
-    <span id="preview-client">〇〇〇〇御中・様</span>
-  </span>
-</div>
+   <!-- 請求先・自社情報エリア -->
+<div class="invoice-party-row">
 
-      <div class="invoice-company">
-  <h3 id="preview-company-name">〇〇会社</h3>
-
-  <p id="preview-company-postcode">
-  〒〇〇〇-〇〇〇〇
-</p>
-
-<p id="preview-company-address">
-  東京都〇〇区〇〇
-</p>
-
-  <p>
-    TEL：
-    <span id="preview-company-tel">
-      〇〇-〇〇-〇〇
+  <!-- 請求先 -->
+  <div class="invoice-client">
+    <span class="client-name-line">
+      <span id="preview-client">〇〇〇〇御中・様</span>
     </span>
-  </p>
+  </div>
 
-  <p>
-    登録番号：
-    <span id="preview-company-number">
-      T
-    </span>
-  </p>
+  <!-- 自社情報 -->
+  <div class="invoice-company">
+    <h3 id="preview-company-name">〇〇会社</h3>
 
-  <div class="invoice-stamp">
-  <span id="stamp-placeholder">角印</span>
-  <img id="stamp-preview" src="" alt="">
-</div>
-</div>
+    <p id="preview-company-postcode">
+      〒〇〇〇-〇〇〇〇
+    </p>
+
+    <p id="preview-company-address">
+      東京都〇〇区〇〇
+    </p>
+
+    <p>
+      TEL：
+      <span id="preview-company-tel">
+        〇〇-〇〇-〇〇
+      </span>
+    </p>
+
+    <p>
+      登録番号：
+      <span id="preview-company-number">
+        T
+      </span>
+    </p>
+
+    <div class="invoice-stamp">
+      <span id="stamp-placeholder">角印</span>
+      <img id="stamp-preview" src="" alt="">
     </div>
+  </div>
 
-    <p class="invoice-message">下記の通りご請求申し上げます。</p>
+</div>
+
+<p class="invoice-message">
+  下記の通りご請求申し上げます。
+</p>
 
     <div class="invoice-total-box">
       <span>ご請求金額</span>
@@ -262,24 +334,43 @@
     2026年○月○日
   </span>
 </p>
+    </div>
+
+</div> <!-- bank-box -->
+
+
+<div class="invoice-brand">
+  取引書類作成ツール ナナコネ
 </div>
-  </div>
+
+
+</div> <!-- invoice-preview -->
+
+</div> <!-- preview-canvas -->
+
 </section>
-<button id="pdf-download-button" type="button">
-  PDFダウンロード
-</button>
+
+
     </div>
 
   </main>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
-<script src="../js/modal.js"></script>
+<!-- ★ここにSupabaseを追加 -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script src="../js/preview.js"></script>
 <script src="../js/items.js"></script>
 <script src="../js/storage.js"></script>
 <script src="../js/stamp.js"></script>
 <script src="../js/pdf.js"></script>
 <script src="../js/script.js"></script>
+
+<!-- 請求書モバイル -->
+<script src="../js/mobile-create.js"></script>
+
+<script src="../js/document-save.js"></script>
 
 </body>
 </html>

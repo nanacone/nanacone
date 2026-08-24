@@ -4,13 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>３ステップだけ。登録不要で今すぐ作成</title>
+
   <link rel="stylesheet" href="../CSS/styles.css">
+  <link rel="stylesheet" href="../CSS/mobile.css">
 </head>
 <body>
   <nav class="topbar">
     <div class="topbar-inner">
-      <div class="logo">nanacone</div>
-      <button class="menu-btn" aria-label="メニュー">☰</button>
+      <div class="logo">ナナコネ</div>
+      <a href="./mypage.html" class="header-home" aria-label="マイページ">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 12c2.7614 0 5-2.2386 5-5s-2.2386-5-5-5-5 2.2386-5 5 2.2386 5 5 5z" fill="currentColor"/>
+          <path d="M3 20c0-3.866 3.582-7 9-7s9 3.134 9 7v1H3v-1z" fill="currentColor"/>
+        </svg>
+      </a>
     </div>
   </nav>
   <header class="hero">
@@ -23,7 +30,7 @@
         <span class="sub-sep">・</span>
         <span class="sub-item sub-red">単発３３０円</span>
       </p>
-      <p class="hero-desc">フリーランスのためのシンプルな請求書作成サービス</p>
+      <p class="hero-desc">フリーランスのためのシンプルな書類作成サービス</p>
 
       <div class="hero-features">
         <div class="feature feature-no-reg">
@@ -76,7 +83,10 @@
     <section id="templates" class="template-search">
       <div class="template-search-heading">
         <h2 class="template-search-title">テンプレートを選んで始めよう</h2>
-        <p class="template-search-subtitle">すべてインボイスに対応しています</p>
+       <p class="template-search-subtitle">
+  用途に合ったテンプレートを選択してください。<br>
+  すべてインボイス制度に対応しています。
+</p>
       </div>
       <div class="search-header">
         <label class="search-field">
@@ -95,53 +105,151 @@
         <button class="meta-tag meta-btn" data-cat="見積書">見積書 (4)</button>
       </div>
       <div class="template-list">
-        <article class="template-card" data-category="請求書">
-         <div class="template-image">
-  <img src="../img/simple.jpg" alt="シンプル請求書">
-</div>
-          <h3>シンプル請求書</h3>
-          <p>すっきりとした情報設計で読みやすい</p>
-        </article>
+
+  <article
+    class="template-card"
+    data-category="請求書"
+    data-url="./create.html"
+  >
+    <div class="template-image">
+      <img src="../img/simpleナナコネ.jpg" alt="シンプル請求書">
+    </div>
+
+    <h3>シンプル請求書</h3>
+    <p>すっきりとした情報設計で読みやすい</p>
+
+    <button
+      class="template-select-button"
+      type="button"
+    >
+      このテンプレートを選択
+    </button>
+  </article>
         <article class="template-card" data-category="請求書">
           <div class="template-image">写真</div>
           <h3>モダン請求書</h3>
           <p>洗練されたレイアウトで視認性を高める</p>
+          <button
+  class="template-select-button"
+  type="button"
+  onclick="location.href='./create.html'"
+>
+  このテンプレートを選択
+</button>
         </article>
         <article class="template-card" data-category="請求書">
           <div class="template-image">写真</div>
           <h3>クラシック請求書</h3>
           <p>安定感のあるフォーマルな雰囲気</p>
+          <button
+  class="template-select-button"
+  type="button"
+  onclick="location.href='./create.html'"
+>
+  このテンプレートを選択
+</button>
         </article>
         <article class="template-card" data-category="請求書">
           <div class="template-image">写真</div>
           <h3>職業別請求書</h3>
           <p>業種に合わせた使いやすいテンプレート</p>
-        </article>
-        <article class="template-card" data-category="見積書">
-          <div class="template-image">写真</div>
-          <h3>シンプル見積書</h3>
-          <p>すっきりとした情報設計で読みやすい</p>
-        </article>
-        <article class="template-card" data-category="見積書">
-          <div class="template-image">写真</div>
-          <h3>モダン見積書</h3>
-          <p>洗練されたレイアウトで視認性を高める</p>
-        </article>
-        <article class="template-card" data-category="見積書">
-          <div class="template-image">写真</div>
-          <h3>クラシック見積書</h3>
-          <p>安定感のあるフォーマルな雰囲気</p>
-        </article>
-        <article class="template-card" data-category="見積書">
-          <div class="template-image">写真</div>
-          <h3>職業別見積書</h3>
-          <p>業種に合わせた使いやすいテンプレート</p>
-        </article>
+          <button
+  class="template-select-button"
+  type="button"
+  onclick="location.href='./create.html'"
+>
+  このテンプレートを選択
+</button>
+       <!-- 職業別請求書の終わり -->
+</article>
+
+
+<!-- ↓ここから見積書4つを入れる -->
+
+<!-- シンプル見積書 -->
+<article
+  class="template-card"
+  data-category="見積書"
+  data-url="./estimate-create.html"
+>
+  <div class="template-image">
+    <img src="../img/simple見積書ナナコネ.jpg" alt="シンプル見積書">
+  </div>
+
+  <h3>シンプル見積書</h3>
+  <p>すっきりとした情報設計で読みやすい</p>
+
+  <button class="template-select-button" type="button">
+    このテンプレートを選択
+  </button>
+</article>
+
+
+<!-- モダン見積書 -->
+<article
+  class="template-card"
+  data-category="見積書"
+  data-url="./estimate-create.html"
+>
+  <div class="template-image">写真</div>
+
+  <h3>モダン見積書</h3>
+  <p>洗練されたレイアウトで視認性を高める</p>
+
+  <button class="template-select-button" type="button">
+    このテンプレートを選択
+  </button>
+</article>
+
+
+<!-- クラシック見積書 -->
+<article
+  class="template-card"
+  data-category="見積書"
+  data-url="./estimate-create.html"
+>
+  <div class="template-image">写真</div>
+
+  <h3>クラシック見積書</h3>
+  <p>安定感のあるフォーマルな雰囲気</p>
+
+  <button class="template-select-button" type="button">
+    このテンプレートを選択
+  </button>
+</article>
+
+
+<!-- 職業別見積書 -->
+<article
+  class="template-card"
+  data-category="見積書"
+  data-url="./estimate-create.html"
+>
+  <div class="template-image">写真</div>
+
+  <h3>職業別見積書</h3>
+  <p>業種に合わせた使いやすいテンプレート</p>
+
+  <button class="template-select-button" type="button">
+    このテンプレートを選択
+  </button>
+</article>
       </div>
+      <div class="template-controls">
+  <button class="template-arrow template-prev" type="button" aria-label="前のテンプレート">
+    ‹
+  </button>
+
+  <span class="template-counter">
+    <span id="current-template">1</span> / <span id="total-template">8</span>
+  </span>
+
+  <button class="template-arrow template-next" type="button" aria-label="次のテンプレート">
+    ›
+  </button>
+</div>
       <div class="no-results" style="display:none">該当するテンプレートはありません</div>
     </section>
-  </main>
-  </div>
  <div class="template-modal" aria-hidden="true">
   <div class="modal-backdrop"></div>
 
@@ -158,17 +266,17 @@
       すっきりとした情報設計で読みやすい
     </p>
 
-    <button class="modal-select-button" type="button" onclick="location.href='./create.html'">
+   <button class="modal-select-button" type="button">
   テンプレートを選択する
 </button>
   </div>
 </div>
   <footer>
-    <p>© 2026 Nanacone</p>
+    <p>© 2026 nanaconnect</p>
   </footer>
   <!-- removed manual preview button handler (auto-switching script remains) -->
   
-   <script src="../js/modal.js"></script>
-<script src="../js/script.js"></script>
+  <script src="../js/modal.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 </html>
