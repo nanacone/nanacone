@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PDFダウンロード | ナナコネ</title>
+
+  <link rel="stylesheet" href="../CSS/styles.css">
+  <link rel="stylesheet" href="../CSS/download.css">
+</head>
+
+
+<body class="download-body">
+
+  <!-- =========================
+       ヘッダー
+  ========================== -->
+
+  <nav class="topbar">
+    <div class="topbar-inner">
+
+      <div class="logo">
+        ナナコネ
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- =========================
+       メイン
+  ========================== -->
+
+  <main class="download-page">
+
+    <section class="download-card">
+
+      <!-- 完了アイコン -->
+      <div class="download-check">
+        ✓
+      </div>
+
+
+      <!-- タイトル -->
+      <h1 id="download-title">
+        お支払いが完了しました
+      </h1>
+
+
+      <!-- 説明 -->
+      <p
+        id="download-description"
+        class="download-description"
+      >
+        請求書のPDFをダウンロードできます。
+      </p>
+
+
+      <!-- PDFダウンロード -->
+      <button
+        id="pdf-download-button"
+        class="download-primary-button"
+        type="button"
+      >
+        PDFをダウンロード
+      </button>
+
+
+      <!-- 補足 -->
+      <p class="download-note">
+        PDFは端末に保存してご利用ください。
+      </p>
+
+
+      <!-- =========================
+           次の操作
+      ========================== -->
+
+      <div class="download-actions">
+
+        <button
+          id="create-another-button"
+          class="download-secondary-button"
+          type="button"
+        >
+          別の書類を作成する
+        </button>
+
+
+        <button
+          id="return-button"
+          class="download-text-button"
+          type="button"
+        >
+          トップページへ戻る
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       ライブラリ
+  ========================== -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+
+  <!-- =========================
+       ナナコネ
+  ========================== -->
+
+  <script src="../js/download.js"></script>
+
+</body>
+
+</html>
