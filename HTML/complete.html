@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>請求書確認 | ナナコネ</title>
+	<link rel="stylesheet" href="../CSS/styles.css">
+	<link rel="stylesheet" href="../CSS/complete.css">
+</head>
+<body class="complete-body">
+	<nav class="topbar">
+		<div class="topbar-inner">
+			<div class="logo">ナナコネ</div>
+			<a href="./mypage.html" class="header-home" aria-label="マイページ">
+			  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+			    <path d="M12 12c2.7614 0 5-2.2386 5-5s-2.2386-5-5-5-5 2.2386-5 5 2.2386 5 5 5z" fill="currentColor"/>
+			    <path d="M3 20c0-3.866 3.582-7 9-7s9 3.134 9 7v1H3v-1z" fill="currentColor"/>
+			  </svg>
+			</a>
+		</div>
+	</nav>
+
+	<main class="complete-page">
+		<div class="complete-header">
+			<p class="complete-step">3 / 3</p>
+			<h1 id="complete-document-heading">請求書を確認</h1>
+			<p>入力内容を確認して、必要であればPDFとして保存してください。</p>
+		</div>
+
+		<section class="complete-preview-panel">
+			<div class="invoice-preview invoice-style-simple" id="complete-invoice">
+				<div class="sample-watermark">SAMPLE</div>
+				<div class="invoice-info">
+					<p>発行日：<span id="preview-issue-date">2026年○月○日</span></p>
+					<p>
+  <span id="document-number-label">請求書番号</span>：
+  <span id="preview-invoice-number">INV-2026001</span>
+</p>
+				</div>
+				<h2
+  class="invoice-title"
+  id="complete-document-title"
+>
+  請 求 書
+</h2>
+				<div class="invoice-party-row">
+
+	<!-- 請求先 -->
+	<div class="invoice-client">
+		<span class="client-name-line">
+			<span id="preview-client">〇〇〇〇御中・様</span>
+		</span>
+	</div>
+
+	<!-- 自社情報 -->
+	<div class="invoice-company">
+		<h3 id="preview-company-name">〇〇会社</h3>
+
+		<p id="preview-company-postcode">
+			〒〇〇〇-〇〇〇〇
+		</p>
+
+		<p id="preview-company-address">
+			東京都〇〇区〇〇
+		</p>
+
+		<p>
+			TEL：
+			<span id="preview-company-tel">〇〇-〇〇-〇〇</span>
+		</p>
+
+		<p>
+			登録番号：
+			<span id="preview-company-number">T</span>
+		</p>
+
+		<div class="invoice-stamp">
+			<span id="stamp-placeholder">角印</span>
+			<img id="stamp-preview" alt="角印">
+		</div>
+	</div>
+
+</div>
+
+<p
+  class="invoice-message"
+  id="complete-document-message"
+>
+  下記の通りご請求申し上げます。
+</p>
+				<div class="invoice-total-box">
+  <span id="complete-total-label">ご請求金額</span><strong>￥ <span id="preview-grand-total">0</span> -（税込）</strong></div>
+				<table class="invoice-table">
+					<thead><tr><th>内容・品名</th><th>数量</th><th>単位</th><th>単価（税抜）</th><th>金額（税抜）</th></tr></thead>
+					<tbody id="preview-items-body"></tbody>
+				</table>
+				<div class="invoice-note"><strong>備考欄　　</strong><span id="preview-note"></span></div>
+				<div class="bank-box">
+	<strong>お振込先</strong>
+
+	<p>
+		<span id="preview-bank-name">〇〇銀行</span>
+		<span id="preview-bank-branch">〇〇支店</span>
+	</p>
+
+	<p>
+		普通　
+		<span id="preview-bank-account">123456</span>
+	</p>
+
+	<p>
+		※振込手数料はご負担くださいますようお願いいたします。
+	</p>
+
+	<p>
+		※支払い期日：
+		<span id="preview-payment-date">2026年○月○日</span>
+	</p>
+</div>
+
+
+<!-- ナナコネ ブランド表記 -->
+<div class="invoice-brand">
+	取引書類作成ツール ナナコネ
+</div>
+
+
+</div> <!-- complete-invoice -->
+</section>
+
+		<div class="complete-actions">
+			<button id="back-to-edit" type="button">入力画面へ戻る</button>
+			<button id="purchase-button" type="button">
+  購入してPDFをダウンロード
+</button>
+
+
+
+		</div>
+	</main>
+
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- PDF作成 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<!-- completeページの処理 -->
+<script src="../js/complete.js"></script>
+</body>
+</html>
