@@ -1,0 +1,573 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #0f172a;
+}
+
+.payment-body {
+  min-height: 100vh;
+}
+
+.payment-page {
+  width: min(100% - 28px, 760px);
+  margin: 0 auto;
+  padding: 24px 0 40px;
+}
+
+.payment-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.payment-header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 2.4rem);
+}
+
+.payment-header p {
+  margin: 12px auto 0;
+  max-width: 640px;
+  color: #475569;
+  line-height: 1.7;
+}
+
+.payment-panel {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.08);
+}
+
+.payment-section {
+  margin-bottom: 24px;
+}
+
+.payment-section:last-child {
+  margin-bottom: 0;
+}
+
+.payment-section h2 {
+  margin: 0 0 18px;
+  font-size: 1.05rem;
+  color: #0f172a;
+}
+
+.plan-grid,
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.plan-card,
+.method-card {
+  position: relative;
+  display: grid;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 22px;
+  border: 2px solid #e2e8f0;
+  background: #f8fbff;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.plan-card {
+  grid-template-columns: 1fr;
+  animation: plan-fade-in 0.35s ease;
+}
+
+.method-card {
+  grid-template-columns: auto 1fr;
+}
+
+.plan-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 44px rgba(15, 23, 42, 0.12);
+}
+
+.plan-card.selected {
+  border-color: #2563eb;
+  background: #eff6ff;
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+.method-card.selected {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+@keyframes plan-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.plan-card input,
+.method-card input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.plan-card-main,
+.method-card-main {
+  display: grid;
+  gap: 8px;
+}
+
+.plan-title-row,
+.method-title-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+  width: 100%;
+  min-width: 0;
+}
+
+.brand-icons {
+  display: inline-flex;
+  gap: 6px;
+  flex-wrap: nowrap;
+  align-items: center;
+  min-width: 0;
+}
+
+.brand-icon {
+  width: 34px;
+  height: 22px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #dbe4f1;
+}
+
+.paypay-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 8px;
+}
+
+.method-label {
+  white-space: nowrap;
+}
+
+.plan-check {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #94a3b8;
+  border-radius: 50%;
+  background: #ffffff;
+  margin-top: 4px;
+}
+
+.plan-check span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #2563eb;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.plan-card.selected .plan-check span {
+  opacity: 1;
+}
+
+.plan-title,
+.method-label {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.plan-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #2563eb;
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+}
+
+.plan-price {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.plan-subtitle {
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+/* New plan layout styles */
+.plan-card .plan-features {
+  margin: 12px 0 8px;
+  padding: 0;
+  list-style: none;
+}
+.plan-card .plan-features.single li,
+.plan-card .plan-features.monthly li {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+.plan-card .plan-features li::before {
+  content: "";
+}
+.plan-card .plan-features li { white-space: nowrap; }
+
+.plan-cta-wrap { margin-top: 12px; }
+.plan-cta {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #1746a2;
+  color: #fff;
+  border: none;
+  font-weight: 800;
+  cursor: pointer;
+}
+.plan-cta.outline {
+  background: #fff;
+  color: #1746a2;
+  border: 2px solid #1746a2;
+}
+
+/* Monthly summary box shown when monthly plan selected */
+.monthly-box {
+  border: 1px solid #e6edf8;
+  background: #fbfdff;
+  padding: 14px;
+  border-radius: 12px;
+}
+.monthly-box h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+.monthly-price {
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.monthly-features {
+  margin: 0 0 10px 0;
+  padding: 0 0 0 14px;
+}
+.monthly-features li {
+  margin: 6px 0;
+}
+.monthly-note {
+  margin-top: 10px;
+  color: #64748b;
+  font-size: 0.92rem;
+}
+
+.plan-badge.popular {
+  background: transparent;
+  color: #f97316;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.plan-features {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #475569;
+  font-size: 0.95rem;
+  display: grid;
+  gap: 6px;
+  padding-inline-start: 18px;
+}
+
+.plan-features li {
+  position: relative;
+}
+
+.plan-features li::before {
+  content: "・";
+  position: absolute;
+  left: -14px;
+  color: #2563eb;
+}
+
+/* Make plan feature text a light blue (水色) */
+.plan-features li {
+  color: #38bdf8;
+}
+
+/* Promotional banner inside monthly plan */
+.plan-promo {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: linear-gradient(90deg, rgba(37,99,235,0.06), rgba(249,115,22,0.03));
+  border: 1px solid rgba(37,99,235,0.08);
+  border-radius: 12px;
+  color: #0f172a;
+  font-size: 0.95rem;
+}
+.plan-promo strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #0f172a;
+  font-weight: 800;
+}
+.plan-promo ul {
+  margin: 0;
+  padding: 0 0 0 18px;
+}
+.plan-promo li {
+  list-style: disc;
+  margin: 4px 0;
+  color: #334155;
+  font-size: 0.92rem;
+}
+
+/* Highlight the 'マイページ機能' feature in monthly plan */
+.feature-mypage {
+  color: #f97316 !important;
+  font-weight: 700;
+}
+
+/* Ensure list marker color for feature-mypage matches the text */
+.plan-features li.feature-mypage::before {
+  color: #f97316 !important;
+}
+
+.method-check {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #94a3b8;
+  border-radius: 50%;
+  background: #ffffff;
+  margin-top: 4px;
+}
+
+.method-check span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #2563eb;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.method-card.selected .method-check span {
+  opacity: 1;
+}
+
+.brand-icons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.brand-icon {
+  width: 46px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #dbe4f1;
+}
+
+.brand-description {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.card-form {
+  margin-top: 18px;
+  padding: 20px;
+  border-radius: 22px;
+  background: #f8fafc;
+  border: 1px solid #dbeafe;
+}
+
+.form-row {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.form-row label {
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+.form-row input {
+  width: 100%;
+  min-height: 48px;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  padding: 12px 14px;
+  font-size: 1rem;
+}
+
+.split-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.payment-summary {
+  border: 1px solid #dbe4f1;
+  border-radius: 22px;
+  padding: 22px;
+  background: #f8fbff;
+}
+
+.summary-row,
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font-size: 1rem;
+  color: #334155;
+}
+
+.summary-total {
+  margin-top: 14px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.divider {
+  margin: 16px 0;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+.payment-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.payment-actions button {
+  min-height: 52px;
+  width: 100%;
+  max-width: 420px;
+  border: none;
+  border-radius: 16px;
+  padding: 0 20px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.primary-button {
+  background: #1746a2;
+  color: #fff;
+}
+
+.payment-actions button.secondary-button {
+  background: #fff;
+  color: #1746a2;
+  border: 1px solid #1746a2;
+}
+
+.payment-note {
+  margin: 20px auto 0;
+  max-width: 640px;
+  color: #64748b;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.consent-row {
+  margin-top: 18px;
+}
+
+.consent-label {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.consent-label input {
+  margin-top: 4px;
+  width: 18px;
+  height: 18px;
+}
+
+.consent-link {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.consent-link:hover {
+  opacity: 0.9;
+}
+
+.primary-button.disabled,
+.primary-button:disabled {
+  background: #a5b4fc;
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.policy-links {
+  margin: 10px auto 0;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.policy-links a {
+  color: #475569;
+  text-decoration: none;
+}
+
+.policy-links a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 720px) {
+  .plan-grid,
+  .method-grid,
+  .split-row {
+    grid-template-columns: 1fr;
+  }
+
+  .plan-card,
+  .method-card {
+    grid-template-columns: auto;
+  }
+
+  .method-card {
+    align-items: center;
+  }
+}

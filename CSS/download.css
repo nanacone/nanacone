@@ -1,0 +1,334 @@
+/* =========================================================
+   ナナコネ
+   PDFダウンロード完了画面
+========================================================= */
+
+.download-body {
+  margin: 0;
+  min-height: 100vh;
+  background: #f6f8fb;
+  color: #1f2937;
+}
+
+
+/* =========================================================
+   メイン
+========================================================= */
+
+.download-page {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 48px 20px;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   完了カード
+========================================================= */
+
+.download-card {
+  width: 100%;
+  max-width: 560px;
+
+  padding: 48px 44px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+
+  box-shadow:
+    0 18px 45px
+    rgba(15, 23, 42, 0.08);
+
+  text-align: center;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   チェックマーク
+========================================================= */
+
+.download-check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 72px;
+  height: 72px;
+
+  margin: 0 auto 24px;
+
+  border-radius: 50%;
+
+  background: #eef4ff;
+  color: #1746a2;
+
+  font-size: 34px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   タイトル
+========================================================= */
+
+.download-card h1 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 1.75rem;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   説明
+========================================================= */
+
+.download-description {
+  margin: 14px 0 32px;
+
+  color: #64748b;
+
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   PDFダウンロードボタン
+========================================================= */
+
+.download-primary-button {
+  width: 100%;
+  min-height: 56px;
+
+  border: 0;
+  border-radius: 12px;
+
+  background: #1746a2;
+  color: #ffffff;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+
+  box-shadow:
+    0 8px 20px
+    rgba(23, 70, 162, 0.18);
+}
+
+
+.download-primary-button:hover {
+  background: #123b8c;
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 10px 24px
+    rgba(23, 70, 162, 0.22);
+}
+
+
+.download-primary-button:active {
+  transform:
+    translateY(0);
+}
+
+
+.download-primary-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   PDF保存について
+========================================================= */
+
+.download-note {
+  margin: 12px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   下部操作
+========================================================= */
+
+.download-actions {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  margin-top: 34px;
+  padding-top: 28px;
+
+  border-top: 1px solid #edf0f4;
+}
+
+
+/* =========================================================
+   別の書類を作成
+========================================================= */
+
+.download-secondary-button {
+  width: 100%;
+  min-height: 52px;
+
+  border: 1px solid #1746a2;
+  border-radius: 12px;
+
+  background: #ffffff;
+  color: #1746a2;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+
+.download-secondary-button:hover {
+  background: #f4f7ff;
+}
+
+
+/* =========================================================
+   トップへ戻る
+========================================================= */
+
+.download-text-button {
+  min-height: 42px;
+
+  border: 0;
+  background: transparent;
+
+  color: #64748b;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.download-text-button:hover {
+  color: #1746a2;
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   スマホ
+========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .download-page {
+    min-height:
+      calc(100dvh - 52px);
+
+    align-items: flex-start;
+
+    padding:
+      36px 16px 28px;
+  }
+
+
+  .download-card {
+    max-width: 100%;
+
+    padding:
+      36px 22px 30px;
+
+    border-radius: 18px;
+  }
+
+
+  .download-check {
+    width: 64px;
+    height: 64px;
+
+    margin-bottom: 20px;
+
+    font-size: 30px;
+  }
+
+
+  .download-card h1 {
+    font-size: 1.45rem;
+  }
+
+
+  .download-description {
+    margin-bottom: 28px;
+
+    font-size: 0.92rem;
+  }
+
+
+  .download-primary-button {
+    min-height: 54px;
+  }
+
+
+  .download-actions {
+    margin-top: 30px;
+    padding-top: 24px;
+  }
+
+}
+
+
+/* =========================================================
+   320pxなど小さいスマホ
+========================================================= */
+
+@media screen and (max-width: 360px) {
+
+  .download-page {
+    padding:
+      24px 12px;
+  }
+
+
+  .download-card {
+    padding:
+      30px 16px 24px;
+  }
+
+
+  .download-card h1 {
+    font-size: 1.3rem;
+  }
+
+
+  .download-description {
+    font-size: 0.88rem;
+  }
+
+}

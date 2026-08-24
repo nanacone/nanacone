@@ -1,0 +1,1674 @@
+/* =========================
+   Mobile Header
+========================= */
+
+@media screen and (max-width: 768px) {
+
+  .topbar {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #e8ebf0;
+  }
+
+  .topbar .container {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .topbar-inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    width: 100% !important;
+    height: 64px !important;
+
+    padding: 0 18px !important;
+    margin: 0 !important;
+  }
+
+  .brand {
+    display: block !important;
+    width: auto !important;
+    flex: 0 0 auto !important;
+    text-decoration: none;
+  }
+
+  .brand-mark {
+    display: block !important;
+    white-space: nowrap !important;
+    font-size: 21px !important;
+    font-weight: 800;
+    line-height: 1 !important;
+  }
+
+  .nav,
+  .nav-actions {
+    display: none !important;
+  }
+
+  .mobile-menu-button {
+    display: flex !important;
+
+    width: 40px;
+    height: 40px;
+    padding: 9px;
+
+    border: 0;
+    background: transparent;
+
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+
+    flex: 0 0 40px;
+    cursor: pointer;
+  }
+
+  .mobile-menu-button span {
+    display: block;
+
+    width: 22px;
+    height: 2px;
+    margin: 0 auto;
+
+    background: #111827;
+    border-radius: 10px;
+  }
+}
+
+
+/* =========================
+   Mobile Hero
+========================= */
+
+@media screen and (max-width: 768px) {
+
+  .hero {
+    padding: 36px 20px 52px !important;
+  }
+
+  .hero .container {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  /* PC版の2カラムを解除 */
+  .hero-layout {
+    display: flex !important;
+    flex-direction: column !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    gap: 0 !important;
+  }
+
+.hero-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+
+  /* 上の小さい説明 */
+  .eyebrow {
+
+    width: 100% !important;
+
+    margin: 0 0 14px !important;
+
+    color: #2f67bf;
+
+    font-size: 12px !important;
+    font-weight: 700;
+    line-height: 1.6 !important;
+
+    white-space: normal !important;
+  }
+
+
+  /* メインタイトル */
+  .hero-copy h1 {
+
+    width: 100% !important;
+
+    margin: 0 0 18px !important;
+
+    font-size: 34px !important;
+    line-height: 1.28 !important;
+    letter-spacing: -0.03em !important;
+
+    white-space: normal !important;
+  }
+
+  .hero-copy h1 span {
+    display: inline !important;
+  }
+
+
+  /* ナナコネなら〜 */
+  .lead {
+
+    width: 100% !important;
+
+    margin: 0 0 20px !important;
+
+    font-size: 14px !important;
+    line-height: 1.8 !important;
+
+    white-space: normal !important;
+  }
+
+
+  /* 請求書画像 */
+  .hero-visual {
+
+    position: static !important;
+
+    width: 145px !important;
+    max-width: 145px !important;
+
+    margin: 0 auto 24px !important;
+  }
+
+  .hero-invoice-image {
+    display: block;
+
+    width: 100% !important;
+    height: auto !important;
+
+    cursor: pointer;
+
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.14);
+  }
+
+
+  /* 書類を作成する */
+  .hero-actions {
+
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .hero-actions .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100% !important;
+    min-height: 50px;
+
+    padding: 0 16px;
+
+    font-size: 14px !important;
+  }
+
+
+  /* 支払いについて */
+  .hero-note {
+
+    width: 100% !important;
+
+    margin: 10px 0 0 !important;
+
+    font-size: 11px !important;
+    line-height: 1.7 !important;
+
+    white-space: normal !important;
+  }
+}
+
+/* スマホ専用の請求書画像はPCでは非表示 */
+.hero-visual-mobile {
+  display: none;
+}
+
+/* =========================
+   320px 請求書画像調整
+========================= */
+
+@media screen and (max-width: 359px) {
+
+  /* スマホ専用の請求書 */
+  .hero-visual-mobile {
+    display: block !important;
+
+    width: 160px !important;
+    max-width: 160px !important;
+
+    /* 上の文章との間を空ける */
+    margin: 5px auto 20px !important;
+  }
+
+  .hero-invoice-image-mobile {
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.14);
+  }
+
+  /* PC・タブレット用の請求書は320pxでは消す */
+  .hero-visual {
+    display: none !important;
+  }
+
+}
+/* =========================
+   320px FEATURES
+========================= */
+
+@media screen and (max-width: 359px) {
+
+ .features-section {
+  padding: 3px 20px 52px !important;
+}
+
+  .features-section .section-heading {
+    margin-bottom: 28px !important;
+  }
+
+  .features-section .section-label {
+    margin-bottom: 10px !important;
+    font-size: 11px !important;
+  }
+
+  .features-section .section-heading h2 {
+    margin: 0 0 10px !important;
+
+    font-size: 24px !important;
+    line-height: 1.4 !important;
+  }
+
+  .features-section .section-description {
+    margin: 0 !important;
+
+    font-size: 12px !important;
+    line-height: 1.8 !important;
+  }
+
+
+  /* 3列 → 縦1列 */
+  .feature-list {
+    display: flex !important;
+    flex-direction: column !important;
+
+    width: 100% !important;
+    gap: 0 !important;
+  }
+
+
+  /* 各項目 */
+  .feature-item {
+    display: grid !important;
+
+    grid-template-columns: 36px minmax(0, 1fr) !important;
+
+    width: 100% !important;
+
+    gap: 14px !important;
+
+    padding: 22px 0 !important;
+
+    border-top: 1px solid #e8ebf0 !important;
+  }
+
+  .feature-item:last-child {
+    border-bottom: 1px solid #e8ebf0 !important;
+  }
+
+
+  /* 01 / 02 / 03 */
+  .feature-number {
+    display: block !important;
+
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    line-height: 1.5 !important;
+
+    color: #2f67bf !important;
+
+    white-space: nowrap !important;
+  }
+
+
+  /* 右側 */
+  .feature-content {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+
+  .feature-content h3 {
+    width: 100% !important;
+
+    margin: 0 0 7px !important;
+
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+
+    white-space: normal !important;
+    word-break: normal !important;
+  }
+
+
+  .feature-content p {
+    width: 100% !important;
+
+    margin: 0 !important;
+
+    font-size: 12px !important;
+    line-height: 1.8 !important;
+
+    white-space: normal !important;
+    word-break: normal !important;
+  }
+
+  .feature-item {
+    border-left: none !important;
+    border-right: none !important;
+  }
+
+} /* ← これを追加！FEATURESの@mediaを閉じる */
+
+
+/* =========================
+   PRICING - 320px
+========================= */
+
+@media screen and (max-width: 359px) {
+
+  .pricing-section {
+    padding: 38px 14px 48px !important;
+  }
+
+  .pricing-section .section-heading {
+    margin-bottom: 26px !important;
+  }
+
+ .pricing-grid {
+  display: flex !important;
+  flex-direction: column !important;
+
+  width: 100% !important;
+  gap: 10px !important;
+
+  /* カードを説明文に近づける */
+  margin-top: -10px !important;
+}
+
+
+  /* カード */
+  .plan-card {
+  display: flex !important;
+  flex-direction: column !important;
+
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: auto !important;
+
+  padding: 24px 18px 18px !important;
+
+  border: 1px solid #e1e6ee !important;
+  border-radius: 10px !important;
+  background: #fff !important;
+}
+
+
+  /* 上の小さい文字 */
+  .plan-label {
+    min-height: 24px !important;
+
+    margin: 0 0 8px !important;
+
+    font-size: 8px !important;
+    line-height: 1.4 !important;
+
+    color: #2f67bf !important;
+  }
+
+
+  /* 単発利用 / 月額利用 */
+  .plan-card h3 {
+    margin: 0 !important;
+
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+  }
+
+
+  /* 金額 */
+.price-wrap {
+  display: flex !important;
+  align-items: baseline !important;
+  flex-wrap: wrap !important;
+  margin: 22px 0 20px !important;
+}
+
+.price {
+  font-size: 40px !important;
+  line-height: 1 !important;
+  letter-spacing: -0.05em !important;
+}
+
+.currency {
+  margin-left: 4px !important;
+  font-size: 12px !important;
+}
+
+.per {
+  width: auto !important;
+  margin: 0 0 0 5px !important;
+  font-size: 10px !important;
+}
+
+
+/* 説明文 */
+.plan-description {
+  display: block !important;
+  margin: 0 0 20px !important;
+
+  font-size: 11px !important;
+  line-height: 1.8 !important;
+}
+
+
+/* 機能 */
+.plan-features {
+  margin: 0 0 20px !important;
+  padding: 16px 0 0 !important;
+
+  border-top: 1px solid #e8ebf0 !important;
+}
+
+.plan-features li {
+  margin: 0 0 10px !important;
+
+  font-size: 11px !important;
+  line-height: 1.6 !important;
+}
+
+
+/* ボタン */
+.plan-card .btn {
+  width: 100% !important;
+  min-height: 46px !important;
+
+  margin-top: auto !important;
+  padding: 10px 12px !important;
+
+  font-size: 11px !important;
+  line-height: 1.4 !important;
+}
+
+/* =========================
+   料金カード コンパクト調整
+========================= */
+
+.pricing-grid {
+  gap: 10px !important;
+}
+
+.plan-card {
+  min-height: auto !important;
+  padding: 20px 16px 16px !important;
+}
+
+/* 上の青文字 */
+.plan-label {
+  min-height: auto !important;
+  margin-bottom: 6px !important;
+}
+
+/* 単発利用・月額利用 */
+.plan-card h3 {
+  margin: 0 !important;
+}
+
+/* 金額周り */
+.price-wrap {
+  margin: 16px 0 14px !important;
+}
+
+/* 説明 */
+.plan-description {
+  margin: 0 0 14px !important;
+  font-size: 11px !important;
+  line-height: 1.7 !important;
+}
+
+/* チェック項目 */
+.plan-features {
+  margin: 0 0 14px !important;
+  padding-top: 12px !important;
+}
+
+.plan-features li {
+  margin-bottom: 7px !important;
+}
+
+/* ボタン */
+.plan-card .btn {
+  min-height: 44px !important;
+  margin-top: 8px !important;
+}
+}
+
+/* =========================
+   FOR YOU - 320px
+========================= */
+
+@media screen and (max-width: 359px) {
+
+  .persona-section {
+    padding: 0 20px 48px !important;
+    margin-top: 0 !important;
+  }
+
+  /* FAQと同じ横位置にする */
+  .persona-section .container {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .persona-section .section-heading {
+    margin: 0 0 26px !important;
+    padding-top: 20px !important;
+    border-top: none !important;
+  }
+
+  .persona-section .section-heading::before {
+    display: none !important;
+  }
+
+  .persona-section .section-label {
+    margin: 0 0 12px !important;
+  }
+
+  .persona-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0 !important;
+  }
+
+  .persona-item {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 28px 18px !important;
+
+    border-left: none !important;
+    border-right: none !important;
+    border-top: 1px solid #e8ebf0 !important;
+  }
+
+  .persona-item:last-child {
+    border-bottom: 1px solid #e8ebf0 !important;
+  }
+
+  .features-section {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .feature-list {
+    margin-bottom: 0 !important;
+  }
+
+  .feature-item:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  /* =========================
+   FAQ - 320px
+========================= */
+
+.faq-section {
+  padding: 34px 20px 52px !important;
+}
+
+.faq-wrap {
+  display: block !important;
+
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* FAQ見出し */
+.faq-section .section-heading {
+  margin: 0 0 24px !important;
+}
+
+.faq-section .section-label {
+  margin: 0 0 8px !important;
+
+  font-size: 11px !important;
+}
+
+.faq-section .section-heading h2 {
+  margin: 0 !important;
+
+  font-size: 24px !important;
+  line-height: 1.4 !important;
+}
+
+/* 質問一覧 */
+.faq-list {
+  width: 100% !important;
+
+  border-top: 1px solid #e8ebf0 !important;
+}
+
+.faq-list details {
+  width: 100% !important;
+
+  border-bottom: 1px solid #e8ebf0 !important;
+}
+
+/* 質問 */
+.faq-list summary {
+  position: relative !important;
+
+  width: 100% !important;
+
+  padding: 18px 36px 18px 0 !important;
+
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 1.7 !important;
+
+  white-space: normal !important;
+  word-break: normal !important;
+}
+
+/* ＋ / − */
+.faq-list summary::after {
+  right: 4px !important;
+
+  font-size: 20px !important;
+}
+
+/* 回答 */
+.faq-list details p {
+  width: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 36px 18px 0 !important;
+
+  font-size: 11px !important;
+  line-height: 1.8 !important;
+
+  white-space: normal !important;
+  word-break: normal !important;
+}
+/* =========================
+   PRICING → FAQ の余白調整
+========================= */
+
+.pricing-section {
+  padding-bottom: 12px !important;
+}
+
+.faq-section {
+  padding-top: 12px !important;
+}
+
+}
+/* =========================
+   320px FOOTER
+========================= */
+
+@media screen and (max-width: 359px) {
+
+  .site-footer {
+    padding: 38px 20px 24px !important;
+  }
+
+  .site-footer .container {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  /* 左右2列 → 縦1列 */
+  .footer-main {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+
+    width: 100% !important;
+    gap: 28px !important;
+  }
+
+  /* ナナコネ側 */
+  .footer-info {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .footer-brand {
+    margin: 0 0 10px !important;
+
+    font-size: 20px !important;
+    line-height: 1.4 !important;
+  }
+
+  .footer-description {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    font-size: 12px !important;
+    line-height: 1.8 !important;
+  }
+
+  /* リンク */
+  .footer-links {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    gap: 12px !important;
+
+    font-size: 12px !important;
+  }
+
+  .footer-links a {
+    display: block !important;
+    width: auto !important;
+  }
+
+  /* コピーライト */
+  .footer-bottom {
+    width: 100% !important;
+
+    margin-top: 30px !important;
+    padding-top: 18px !important;
+  }
+
+  .footer-bottom p {
+    font-size: 11px !important;
+  }
+  .faq-section {
+  padding-bottom: 28px !important;
+}
+
+.site-footer {
+  padding-top: 30px !important;
+}
+
+.features-section,
+  .pricing-section,
+  .faq-section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .features-section > .container,
+  .pricing-section > .container,
+  .faq-section > .container {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  /* FEATURES / FOR YOU / PRICING / FAQ
+     日本語の大タイトルをすべて統一 */
+  .features-section .section-heading h2,
+  .persona-section .section-heading h2,
+  .pricing-section .section-heading h2,
+  .faq-section .section-heading h2 {
+    margin-top: 0 !important;
+    font-size: 24px !important;
+    line-height: 1.4 !important;
+    letter-spacing: -0.02em !important;
+  }
+  /* =========================
+   320px
+   タイトル → 説明文の間隔を統一
+========================= */
+.features-section .section-heading h2,
+  .persona-section .section-heading h2,
+  .pricing-section .section-heading h2,
+  .faq-section .section-heading h2 {
+    margin: 0 0 10px !important;
+  }
+}
+
+/* =========================
+   375px専用
+   360px〜399px
+========================= */
+
+@media screen and (min-width: 360px) and (max-width: 399px) {
+
+  /* =====================
+     HEADER
+  ===================== */
+
+  .topbar-inner {
+    width: 100% !important;
+    height: 64px !important;
+
+    margin: 0 !important;
+    padding: 0 20px !important;
+  }
+
+  .brand-mark {
+    font-size: 22px !important;
+  }
+
+  .mobile-menu-button {
+    width: 40px !important;
+    height: 40px !important;
+    flex: 0 0 40px !important;
+  }
+
+
+  /* =====================
+     HERO
+  ===================== */
+
+  .hero {
+    padding: 34px 20px 28px !important;
+  }
+
+  .hero .container,
+  .hero-layout,
+  .hero-copy {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .hero-copy {
+  text-align: left !important;
+}
+
+
+  /* 上の青文字 */
+
+  .eyebrow {
+    margin: 0 0 16px !important;
+
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+
+    text-align: left !important;
+  }
+
+
+  /* タイトル */
+
+  .hero-copy h1 {
+    margin: 0 0 18px !important;
+
+    font-size: 40px !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.035em !important;
+
+  text-align: left !important;
+}
+
+
+  /* 説明文 */
+
+  .lead {
+    margin: 0 0 24px !important;
+
+    font-size: 15px !important;
+    line-height: 1.8 !important;
+
+    text-align: left !important;
+  }
+
+
+  /* PC用請求書は非表示 */
+
+  .hero-visual {
+    display: none !important;
+  }
+
+
+  /* 375px用請求書 */
+
+  .hero-visual-mobile {
+    display: block !important;
+
+    width: 190px !important;
+    max-width: 190px !important;
+
+    margin: 0 auto 26px !important;
+  }
+
+  .hero-invoice-image-mobile {
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    margin: 0 auto !important;
+  }
+
+
+  /* ボタン */
+
+  .hero-bottom,
+  .hero-cta-area,
+  .hero-actions {
+    width: 100% !important;
+  }
+
+  .hero-actions {
+    margin: 0 0 10px !important;
+  }
+
+  .hero-actions .btn {
+    width: 100% !important;
+
+    min-height: 52px !important;
+
+    font-size: 15px !important;
+  }
+
+
+  /* ボタン下説明 */
+
+  .hero-note {
+    margin: 0 !important;
+
+    font-size: 11px !important;
+    line-height: 1.7 !important;
+
+    text-align: center !important;
+  }
+/* =========================================
+   375px 横ズレ修正
+========================================= */
+
+  html,
+  body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box !important;
+  }
+
+  .topbar-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    margin: 0 !important;
+  }
+
+  .hero {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .hero > .container.hero-layout {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+   .hero-invoice-image-mobile {
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.16) !important;
+  }
+
+  /* =========================
+   FEATURES - 375px
+========================= */
+.features-section {
+    padding: 18px 20px 52px !important;
+  }
+
+  .features-section .container {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .features-section .section-heading {
+    margin-bottom: 28px !important;
+  }
+
+  .features-section .section-label {
+    margin-bottom: 10px !important;
+    font-size: 11px !important;
+  }
+
+  .features-section .section-heading h2 {
+    margin: 0 0 10px !important;
+    font-size: 26px !important;
+    line-height: 1.4 !important;
+  }
+
+  .features-section .section-description {
+    margin: 0 !important;
+    font-size: 13px !important;
+    line-height: 1.8 !important;
+  }
+
+  /* 3列 → 縦1列 */
+  .feature-list {
+    display: flex !important;
+    flex-direction: column !important;
+
+    width: 100% !important;
+    gap: 0 !important;
+
+    margin: 0 !important;
+  }
+
+  .feature-item {
+    display: grid !important;
+    grid-template-columns: 40px minmax(0, 1fr) !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+
+    gap: 14px !important;
+    padding: 24px 0 !important;
+
+    border-left: none !important;
+    border-right: none !important;
+    border-top: 1px solid #e8ebf0 !important;
+  }
+
+  .feature-item:last-child {
+    border-bottom: 1px solid #e8ebf0 !important;
+  }
+
+  .feature-number {
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    line-height: 1.5 !important;
+    color: #2f67bf !important;
+
+    white-space: nowrap !important;
+  }
+
+  .feature-content {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .feature-content h3 {
+    width: 100% !important;
+
+    margin: 0 0 7px !important;
+
+    font-size: 17px !important;
+    line-height: 1.5 !important;
+
+    white-space: normal !important;
+    word-break: normal !important;
+  }
+
+  .feature-content p {
+    width: 100% !important;
+
+    margin: 0 !important;
+
+    font-size: 12px !important;
+    line-height: 1.8 !important;
+
+    white-space: normal !important;
+    word-break: normal !important;
+  }
+/* =========================
+   FOR YOU - 375px
+========================= */
+
+
+  .persona-section {
+  width: 100% !important;
+
+  padding: 30px 20px 48px !important;
+  margin: 0 !important;
+
+  background: #f6f9fc !important;
+}
+
+  .persona-section .container {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+
+  /* 上のFEATURES最後のグレー線に近づける */
+ .persona-section .section-heading {
+  margin: 0 0 26px !important;
+  padding-top: 0 !important;
+}
+
+  .persona-section .section-label {
+    margin: 0 0 10px !important;
+
+    font-size: 11px !important;
+  }
+
+  .persona-section .section-heading h2 {
+    margin: 0 0 10px !important;
+
+    font-size: 26px !important;
+    line-height: 1.4 !important;
+  }
+
+  .persona-section .section-description {
+    margin: 0 !important;
+
+    font-size: 13px !important;
+    line-height: 1.8 !important;
+  }
+
+
+  /* 2列 → 縦1列 */
+  .persona-grid {
+    display: flex !important;
+    flex-direction: column !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+    gap: 0 !important;
+
+    border-top: 1px solid #e8ebf0 !important;
+    border-bottom: 1px solid #e8ebf0 !important;
+
+    background: #fff !important;
+  }
+
+  .persona-item {
+    width: 100% !important;
+    min-width: 0 !important;
+
+    padding: 28px 20px !important;
+
+    border-left: none !important;
+    border-right: none !important;
+  }
+
+  .persona-item + .persona-item {
+    border-left: none !important;
+    border-top: 1px solid #e8ebf0 !important;
+  }
+
+  .persona-item::before {
+    width: 28px !important;
+    height: 3px !important;
+
+    margin-bottom: 18px !important;
+  }
+
+  .persona-item h3 {
+    margin: 0 0 10px !important;
+
+    font-size: 18px !important;
+    line-height: 1.5 !important;
+  }
+
+  .persona-item p {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    font-size: 12px !important;
+    line-height: 1.8 !important;
+  }
+
+  
+.features-section {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .feature-list {
+    margin-bottom: 0 !important;
+  }
+
+  .feature-item:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .persona-section {
+  margin-top: 0 !important;
+  padding-top: 30px !important;
+}
+
+.persona-section .section-heading {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* =========================
+   PRICING - 375px
+========================= */
+
+.pricing-section {
+  width: 100% !important;
+  padding: 30px 20px 52px !important;
+}
+
+.pricing-section .container {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+/* 見出し */
+.pricing-section .section-heading {
+  margin: 0 0 28px !important;
+}
+
+.pricing-section .section-label {
+  margin: 0 0 10px !important;
+  font-size: 11px !important;
+}
+
+.pricing-section .section-heading h2 {
+  margin: 0 0 10px !important;
+
+  font-size: 26px !important;
+  line-height: 1.4 !important;
+}
+
+.pricing-section .section-description {
+  margin: 0 !important;
+
+  font-size: 13px !important;
+  line-height: 1.8 !important;
+}
+
+
+/* =========================
+   料金カード
+========================= */
+
+.pricing-grid {
+  display: flex !important;
+  flex-direction: column !important;
+
+  width: 100% !important;
+  margin: 0 !important;
+  gap: 14px !important;
+}
+
+
+/* 1枚ずつ横いっぱい */
+.plan-card {
+  display: flex !important;
+  flex-direction: column !important;
+
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: auto !important;
+
+  padding: 26px 22px 22px !important;
+
+  border: 1px solid #e1e6ee !important;
+  border-radius: 10px !important;
+
+  background: #fff !important;
+}
+
+
+/* 必要なときだけ */
+.plan-label {
+  min-height: auto !important;
+
+  margin: 0 0 8px !important;
+
+  font-size: 10px !important;
+  line-height: 1.5 !important;
+}
+
+
+/* 単発利用・月額利用 */
+.plan-card h3 {
+  margin: 0 !important;
+
+  font-size: 18px !important;
+  line-height: 1.5 !important;
+}
+
+
+/* 330円 / 980円 */
+.price-wrap {
+  display: flex !important;
+  align-items: baseline !important;
+  flex-wrap: nowrap !important;
+
+  margin: 20px 0 18px !important;
+}
+
+.price {
+  font-size: 44px !important;
+  line-height: 1 !important;
+  letter-spacing: -0.04em !important;
+}
+
+.currency {
+  margin-left: 5px !important;
+
+  font-size: 13px !important;
+  white-space: nowrap !important;
+}
+
+.per {
+  width: auto !important;
+
+  margin-left: 5px !important;
+
+  font-size: 11px !important;
+  white-space: nowrap !important;
+}
+
+
+/* 説明文 */
+.plan-description {
+  width: 100% !important;
+
+  margin: 0 0 18px !important;
+
+  font-size: 12px !important;
+  line-height: 1.8 !important;
+
+  white-space: normal !important;
+}
+
+
+/* 機能一覧 */
+.plan-features {
+  width: 100% !important;
+
+  margin: 0 0 18px !important;
+  padding: 16px 0 0 !important;
+
+  border-top: 1px solid #e8ebf0 !important;
+}
+
+.plan-features li {
+  margin: 0 0 9px !important;
+
+  font-size: 12px !important;
+  line-height: 1.7 !important;
+}
+
+
+/* ボタン */
+.plan-card .btn {
+  width: 100% !important;
+  min-height: 48px !important;
+
+  margin-top: 8px !important;
+
+  font-size: 12px !important;
+}
+
+/* =========================
+   FAQ - 375px
+========================= */
+
+.faq-section {
+  width: 100% !important;
+  padding: 2px 20px 48px !important;
+}
+
+.faq-section .container {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* PC版レイアウトを解除 */
+.faq-wrap {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+/* =====================
+   FAQ見出し
+===================== */
+
+.faq-section .section-heading {
+  width: 100% !important;
+  margin: 0 0 28px !important;
+  padding: 0 !important;
+}
+
+.faq-section .section-label {
+  margin: 0 0 10px !important;
+
+  font-size: 11px !important;
+  line-height: 1.5 !important;
+}
+
+.faq-section .section-heading h2 {
+  margin: 0 !important;
+
+  font-size: 26px !important;
+  line-height: 1.4 !important;
+  letter-spacing: -0.02em !important;
+}
+
+
+/* =====================
+   質問一覧
+===================== */
+
+.faq-list {
+  display: block !important;
+
+  width: 100% !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border-top: 1px solid #e8ebf0 !important;
+}
+
+.faq-list details {
+  display: block !important;
+
+  width: 100% !important;
+  margin: 0 !important;
+
+  border-bottom: 1px solid #e8ebf0 !important;
+}
+
+
+/* 質問 */
+
+.faq-list summary {
+  position: relative !important;
+
+  width: 100% !important;
+
+  padding: 20px 38px 20px 0 !important;
+
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 1.7 !important;
+
+  white-space: normal !important;
+}
+
+
+/* ＋ / − */
+
+.faq-list summary::after {
+  right: 4px !important;
+
+  font-size: 20px !important;
+}
+
+
+/* 回答 */
+
+.faq-list details p {
+  width: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 38px 20px 0 !important;
+
+  font-size: 12px !important;
+  line-height: 1.8 !important;
+
+  white-space: normal !important;
+}
+
+/* =========================
+   FOOTER - 375px
+========================= */
+
+.site-footer {
+  width: 100% !important;
+  padding: 30px 20px 24px !important;
+}
+
+.site-footer .container {
+  width: 100% !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+/* =====================
+   上部分
+===================== */
+
+.footer-main {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+
+  width: 100% !important;
+
+  margin: 0 !important;
+  gap: 26px !important;
+}
+
+
+/* ナナコネ */
+
+.footer-info {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.footer-brand {
+  margin: 0 0 10px !important;
+
+  font-size: 21px !important;
+  line-height: 1.4 !important;
+}
+
+.footer-description {
+  width: 100% !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+
+  font-size: 12px !important;
+  line-height: 1.8 !important;
+}
+
+
+/* =====================
+   リンク
+===================== */
+
+.footer-links {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+
+  width: 100% !important;
+
+  margin: 0 !important;
+  gap: 12px !important;
+
+  font-size: 12px !important;
+  line-height: 1.6 !important;
+}
+
+.footer-links a {
+  display: block !important;
+  width: auto !important;
+
+  margin: 0 !important;
+}
+
+
+/* =====================
+   コピーライト
+===================== */
+
+.footer-bottom {
+  width: 100% !important;
+
+  margin-top: 30px !important;
+  padding-top: 18px !important;
+
+  border-top: 1px solid #e8ebf0 !important;
+}
+
+.footer-bottom p {
+  margin: 0 !important;
+
+  font-size: 11px !important;
+  line-height: 1.6 !important;
+}
+
+/* =========================
+   375px セクションタイトル統一
+========================= */
+
+.features-section .section-heading h2,
+.persona-section .section-heading h2,
+.pricing-section .section-heading h2,
+.faq-section .section-heading h2 {
+  margin-top: 0 !important;
+  font-size: 26px !important;
+  line-height: 1.4 !important;
+  letter-spacing: -0.02em !important;
+}
+}

@@ -21,7 +21,45 @@ body {
 .topbar .logo {
   font-weight: 700;
   font-size: 1.2rem;
-  color: #0f172a;
+  color: #000000;
+}
+
+.topbar .header-home {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  padding: 6px 6px 2px;
+  border-radius: 8px;
+  background: transparent;
+  color: #000000;
+  text-decoration: none;
+  border: 1px solid transparent;
+  font-size: 0.78rem;
+}
+
+.topbar .header-home svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+  color: inherit;
+  margin-bottom: 4px;
+}
+
+.topbar .header-home::after {
+  content: "マイページ";
+  display: block;
+  text-align: center;
+  color: #f97316;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.topbar .header-home:hover {
+  background: #ffffff;
+  border-color: #d1d5db;
 }
 .menu-btn {
   background: transparent;
@@ -338,8 +376,8 @@ section {
 
 .template-image {
   width: 100%;
-  min-height: 280px; /* increased for portrait orientation */
-  aspect-ratio: 3 / 4; /* enforce vertical ratio */
+  min-height: 280px;
+  aspect-ratio: 3 / 4;
   border-radius: 12px;
   background: linear-gradient(135deg, #d9e7ff 0%, #f8fbff 100%);
   display: flex;
@@ -347,16 +385,27 @@ section {
   justify-content: center;
   color: #6b7280;
   font-size: 0.95rem;
+
+  overflow: hidden;
 }
 
 /* Style for actual images inside .template-image or similar containers */
-.template-image img,
+/* テンプレート一覧の画像 */
+.template-image img {
+  display: block;
+  width: 92%;
+  height: 92%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0;
+}
+
+/* モーダル画像は今まで通り */
 .modal-image img {
   width: 110%;
   height: 110%;
-  object-fit: contain
-  ; /* 画像がコンテナを埋めるように調整し、アスペクト比を維持 */
-  border-radius: inherit; /* 親要素の角丸を継承 */
+  object-fit: contain;
+  border-radius: inherit;
 }
 
 .template-card h3 {
@@ -708,6 +757,26 @@ footer {
   font-size: 1.3rem;
 }
 
+.invoice-brand {
+  position: absolute;
+  right: 14px;
+  bottom: 10px;
+  font-size: 0.75rem;
+  color: #6b7280;
+  opacity: 0.95;
+  font-family: sans-serif;
+  display: none; /* hide on-screen; show only in print/PDF */
+}
+
+@media print {
+  .invoice-brand {
+    display: block;
+    color: #9ca3af;
+    opacity: 1;
+    font-size: 0.78rem;
+  }
+}
+
 .invoice-message {
   margin-top: 36px;
 }
@@ -810,19 +879,6 @@ footer {
   overflow-x: auto;
 }
 
-@media (max-width: 768px) {
-  .create-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .form-panel {
-    position: static;
-  }
-
-  .invoice-preview {
-    min-width: 720px;
-  }
-}
 
 .invoice-style-simple {
   position: relative;
@@ -842,15 +898,41 @@ footer {
 }
 
 .invoice-company {
-  position: absolute !important;
-  top: 290px !important;
-  right: 80px !important;
-  margin-top: 0 !important;
-  transform: none !important;
+  width: 300px;
+  max-width: 300px;
+
+  margin-top: 0;
+  margin-left: auto;
+
+  position: relative;
+  right: 20px;
+
+  text-align: left;
+}
+
+.invoice-company h3 {
+  margin: 0 0 8px;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.invoice-company p {
+  margin: 4px 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+#preview-company-address {
+  width: 100%;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .invoice-message {
-  margin-top: 130px !important;
+  margin-top: 28px !important;
 }
 
 .invoice-table {
@@ -1110,13 +1192,25 @@ footer {
     margin-top: 8px !important;
   }
 @media print {
+  @media print {
   .invoice-company {
-    position: absolute !important;
-    top: 260px !important;
-    right: 10mm !important;
-    width: 48mm !important;
+    position: relative !important;
+    top: auto !important;
+    right: 0 !important;
+
+    width: 55mm !important;
+    max-width: 55mm !important;
+
+    margin-top: 12mm !important;
+    margin-left: auto !important;
+
     text-align: left !important;
   }
+
+  .invoice-message {
+    margin-top: 8mm !important;
+  }
+}
 
   .invoice-stamp {
     position: absolute !important;
@@ -1147,4 +1241,133 @@ footer {
     margin: 3px 0 !important;
   }
 }
+}
+.create-pc-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+#preview-confirm-button {
+  min-width: 260px;
+  height: 52px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #2563b8;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+#preview-confirm-button:hover {
+  background: #183f73;
+}
+.create-pc-actions {
+  width: 100%;
+  margin-top: 24px;
+  padding-bottom: 20px;
+}
+
+#preview-confirm-button {
+  width: 100%;
+  height: 52px;
+  border: none;
+  border-radius: 8px;
+  background: #2457b2;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#preview-confirm-button:hover {
+  background: #1d478f;
+}
+#preview-company-address {
+  max-width: 280px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.5;
+}
+.invoice-company {
+  width: 300px;
+  max-width: 300px;
+}
+/* =========================
+   請求先＋自社情報
+========================= */
+
+.invoice-party-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 270px;
+  column-gap: 48px;
+  align-items: start;
+  margin-top: 55px;
+}
+
+/* 請求先 */
+.invoice-party-row .invoice-client {
+  position: relative !important;
+  top: -10px !important;
+
+  margin: 0 !important;
+  min-width: 0;
+}
+
+/* 自社情報 */
+.invoice-party-row .invoice-company {
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  left: auto !important;
+
+  width: 240px !important;
+  max-width: 240px !important;
+
+  margin: 40px 0 0 !important; /* ← 14pxから30pxへ */
+  justify-self: end;
+}
+
+/* 長い住所は右側の範囲内で折り返す */
+.invoice-party-row #preview-company-address {
+  width: 100%;
+  max-width: 100%;
+
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+
+  line-height: 1.45;
+}
+
+/* このブロックが伸びた分だけ
+   下記の通り〜も自動で下がる */
+.invoice-message {
+  margin-top: 28px !important;
+}
+/* =========================
+   ナナコネ ブランド表記
+========================= */
+
+.invoice-preview {
+  position: relative;
+}
+
+.invoice-brand {
+  position: absolute;
+  right: 24px;
+  bottom: 18px;
+
+  font-size: 10px;
+  font-weight: 500;
+  color: #999;
+
+  white-space: nowrap;
+  letter-spacing: 0.02em;
 }
