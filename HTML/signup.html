@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>アカウント作成 | ナナコネ</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="../CSS/signup.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="signup-header">
+    <div class="signup-header-inner">
+
+    
+      <a href="./top.html" class="signup-logo">
+        ナナコネ
+      </a>
+
+      <a href="./top.html" class="back-top" id="signup-back-link">
+  ← トップへ戻る
+</a>
+
+    </div>
+  </header>
+
+
+  <!-- Main -->
+  <main class="signup-main">
+
+    <section class="signup-container">
+
+      <div class="signup-heading">
+
+        <p class="section-label">
+          CREATE ACCOUNT
+        </p>
+
+        <h1>アカウント作成</h1>
+
+        <p>
+          月額プランをご利用いただくための<br>
+          アカウントを作成します。
+        </p>
+
+      </div>
+
+
+      <form id="signup-form" class="signup-form">
+
+        <!-- お名前 -->
+        <div class="form-group">
+
+          <label for="signup-name">
+            お名前
+          </label>
+
+          <input
+            type="text"
+            id="signup-name"
+            name="name"
+            autocomplete="name"
+            placeholder="山田 太郎"
+            required
+          >
+
+        </div>
+
+
+       <!-- メールアドレス -->
+<div class="form-group">
+
+  <label for="signup-email">
+    メールアドレス
+  </label>
+
+  <input
+    type="email"
+    id="signup-email"
+    name="email"
+    autocomplete="email"
+    placeholder="example@email.com"
+    required
+  >
+
+</div>
+
+
+<!-- パスワード -->
+<div class="form-group">
+
+  <label for="signup-password">
+  パスワード
+</label>
+
+<p class="password-note">
+  8文字以上で入力してください。
+</p>
+
+<input
+  type="password"
+  id="signup-password"
+  name="password"
+  autocomplete="new-password"
+  placeholder="パスワードを入力"
+  minlength="8"
+  required
+>
+
+
+</div>
+
+<!-- パスワード確認 -->
+<div class="form-group">
+
+  <label for="signup-password-confirm">
+    パスワード（確認）
+  </label>
+
+  <input
+    type="password"
+    id="signup-password-confirm"
+    name="password-confirm"
+    autocomplete="new-password"
+    placeholder="もう一度入力"
+    minlength="8"
+    required
+  >
+
+</div>
+<!-- パスワード表示 -->
+<div class="password-show-option">
+  <label>
+    <input type="checkbox" id="show-password">
+    パスワードを表示する
+  </label>
+</div>
+</div>
+
+
+        <!-- 規約 -->
+        <label class="terms-check">
+
+          <input
+            type="checkbox"
+            id="signup-terms"
+            required
+          >
+
+          <span>
+            <a href="./terms.html" target="_blank">利用規約</a>
+            と
+            <a href="./privacy.html" target="_blank">プライバシーポリシー</a>
+            に同意します
+          </span>
+
+        </label>
+
+
+        <button type="submit" class="signup-button">
+          アカウントを作成する
+        </button>
+
+      </form>
+
+
+      <!-- ログイン -->
+      <div class="login-area">
+
+        <p>
+          すでにアカウントをお持ちの方
+        </p>
+
+        <a href="./login.html" class="login-link">
+          ログインする
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="signup-footer">
+    <p>© 2026 nanaconnect</p>
+  </footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/signup.js"></script>
+
+</body>
+</html>

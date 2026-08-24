@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>月額プランのお申し込み | ナナコネ</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="../CSS/styles.css">
+  <link rel="stylesheet" href="../CSS/subscription.css">
+</head>
+
+<body class="subscription-body">
+
+  <!-- Header -->
+  <header class="subscription-header">
+    <div class="subscription-header-inner">
+
+      <a href="./top.html" class="subscription-logo">
+        ナナコネ
+      </a>
+
+      <a href="./mypage.html" class="back-mypage">
+        マイページへ戻る
+      </a>
+
+    </div>
+  </header>
+
+
+  <!-- Main -->
+  <main class="subscription-main">
+
+    <section class="subscription-container">
+
+      <!-- 見出し -->
+      <div class="subscription-heading">
+
+        <p class="section-label">
+          MONTHLY PLAN
+        </p>
+
+        <h1>月額プランのお申し込み</h1>
+
+        <p class="subscription-lead">
+          ナナコネを継続して利用する方向けのプランです。<br>
+          お申し込み後、書類の保存・管理機能をご利用いただけます。
+        </p>
+
+      </div>
+
+
+      <!-- プラン -->
+      <div class="subscription-card">
+
+        <div class="plan-heading">
+          <p class="plan-label">
+            ナナコネ 月額プラン
+          </p>
+
+          <div class="price-area">
+            <span class="price">980</span>
+            <span class="yen">円</span>
+            <span class="month">/ 月（税込）</span>
+          </div>
+        </div>
+
+
+        <!-- 機能 -->
+        <ul class="subscription-features">
+          <li>
+            <span class="check">✓</span>
+            マイページ機能
+          </li>
+
+          <li>
+            <span class="check">✓</span>
+            書類を何枚でも作成
+          </li>
+
+          <li>
+            <span class="check">✓</span>
+            PDFを何度でもダウンロード
+          </li>
+
+          <li>
+            <span class="check">✓</span>
+            過去の書類を確認
+          </li>
+        </ul>
+
+
+        <!-- 支払い情報 -->
+        <div class="payment-summary">
+
+          <div class="summary-row">
+            <span>月額プラン</span>
+            <span>980円</span>
+          </div>
+
+          <div class="summary-divider"></div>
+
+          <div class="summary-total">
+            <span>本日のお支払い</span>
+            <strong>980円（税込）</strong>
+          </div>
+
+        </div>
+
+
+        <!-- 規約 -->
+        <label class="subscription-consent">
+
+          <input
+            type="checkbox"
+            id="subscription-consent"
+          >
+
+          <span>
+            <a href="./terms.html">
+  利用規約
+</a>
+            および
+            <a href="./privacy.html">
+  プライバシーポリシー
+</a>
+            に同意します
+          </span>
+
+        </label>
+
+
+        <!-- 決済ボタン -->
+        <button
+          id="subscription-button"
+          class="subscription-button"
+          type="button"
+          disabled
+        >
+          月額980円で申し込む
+        </button>
+
+
+        <p class="subscription-note">
+          お申し込み後は月額980円（税込）で自動更新されます。
+        </p>
+
+        <p class="legal-link">
+          <a href="./legal.html">
+  特定商取引法に基づく表記
+</a>
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="subscription-footer">
+    <p>© 2026 nanaconnect</p>
+  </footer>
+
+
+  <!-- 今は規約チェックだけ動かす -->
+  <script>
+    const consentCheckbox =
+      document.getElementById('subscription-consent');
+
+    const subscriptionButton =
+      document.getElementById('subscription-button');
+
+    consentCheckbox.addEventListener('change', () => {
+      subscriptionButton.disabled = !consentCheckbox.checked;
+    });
+
+    subscriptionButton.addEventListener('click', () => {
+      console.log('月額決済処理へ');
+
+      // 後でここに本番の月額決済を接続する
+    });
+  </script>
+
+</body>
+</html>
