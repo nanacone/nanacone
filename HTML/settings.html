@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アカウント設定 | ナナコネ</title>
+  <link rel="stylesheet" href="../CSS/styles.css">
+  <link rel="stylesheet" href="../CSS/success.css">
+</head>
+<body>
+  <header class="success-header">
+    <div class="header-inner">
+      <a href="./index.html" class="logo">ナナコネ</a>
+      <a href="./mypage.html" class="header-home" aria-label="マイページ">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 12c2.7614 0 5-2.2386 5-5s-2.2386-5-5-5-5 2.2386-5 5 2.2386 5 5 5z" fill="currentColor"/>
+          <path d="M3 20c0-3.866 3.582-7 9-7s9 3.134 9 7v1H3v-1z" fill="currentColor"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <main class="success-main">
+    <section class="success-container">
+      <h1>アカウント設定</h1>
+      <form style="text-align:left; max-width:540px; margin:20px auto;" id="settings-form">
+        <label>表示名<br><input id="display-name" type="text" value="山田 太郎" style="width:100%; padding:10px; border-radius:8px; border:1px solid #ddd;"></label>
+        <div style="height:12px"></div>
+        <label>メールアドレス<br><input id="email" type="email" value="user@example.com" style="width:100%; padding:10px; border-radius:8px; border:1px solid #ddd;"></label>
+        <div style="height:12px"></div>
+        <label>パスワード（変更する場合のみ）<br><input id="password" type="password" placeholder="新しいパスワード" style="width:100%; padding:10px; border-radius:8px; border:1px solid #ddd;"></label>
+        <div style="height:18px"></div>
+        <button id="save-settings" type="button" class="main-button" style="background:#1746a2; color:#fff; padding:12px 16px; border-radius:12px; border:none;">保存</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="success-footer">
+    <p>© 2026 nanaconnect</p>
+  </footer>
+  <script>
+    // settings: save/load to localStorage
+    document.addEventListener('DOMContentLoaded', () => {
+      const nameInput = document.getElementById('display-name');
+      const emailInput = document.getElementById('email');
+      const passwordInput = document.getElementById('password');
+      const saveBtn = document.getElementById('save-settings');
+
+      // load
+     const storedName = localStorage.getItem('nanaconne_displayName');
+const storedEmail = localStorage.getItem('nanaconne_email');
+      if (storedName) nameInput.value = storedName;
+      if (storedEmail) emailInput.value = storedEmail;
+
+      saveBtn.addEventListener('click', () => {
+        localStorage.setItem('nanaconne_displayName', nameInput.value || '');
+        localStorage.setItem('nanaconne_email', emailInput.value || '');
+        // NOTE: Password handling should use secure server-side storage; here we do not persist password.
+        alert('設定を保存しました');
+        window.location.href = './mypage.html';
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>お支払い完了 | nanacone</title>
+
+  <link rel="stylesheet" href="../CSS/success.css">
+</head>
+
+<body>
+
+  <header class="success-header">
+    <div class="header-inner">
+
+      <a href="./index.html" class="logo">
+        nanacone
+      </a>
+
+      <a href="./mypage.html" class="header-home" aria-label="マイページ">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 12c2.7614 0 5-2.2386 5-5s-2.2386-5-5-5-5 2.2386-5 5 2.2386 5 5 5z" fill="currentColor"/>
+          <path d="M3 20c0-3.866 3.582-7 9-7s9 3.134 9 7v1H3v-1z" fill="currentColor"/>
+        </svg>
+      </a>
+
+    </div>
+  </header>
+
+
+  <main class="success-main">
+
+    <section class="success-container">
+
+      <!-- チェックマーク -->
+      <div class="success-icon">
+        ✓
+      </div>
+
+
+      <!-- タイトル -->
+      <h1>
+        ご購入ありがとうございました！
+      </h1>
+
+      <p class="success-message">
+        お支払いが正常に完了しました。
+      </p>
+
+
+      <!-- 購入情報 -->
+      <div class="payment-card">
+
+        <div class="document-icon">
+          📄
+        </div>
+
+        <div class="payment-info">
+
+          <p class="download-notice">
+            SAMPLEなしの請求書をダウンロードできます。
+          </p>
+
+          <div class="payment-row">
+            <span>ご注文番号</span>
+            <strong id="order-number">
+              -
+            </strong>
+          </div>
+
+          <div class="payment-row">
+            <span>お支払い日時</span>
+            <strong id="payment-date">
+              -
+            </strong>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- PDFダウンロード -->
+      <button
+        type="button"
+        id="download-button"
+        class="main-button"
+      >
+        PDFをダウンロードする
+      </button>
+
+      <p class="button-description">
+        SAMPLEなしの請求書（PDF）がダウンロードされます
+      </p>
+
+
+      <!-- 編集 -->
+      <a
+        href="./create.html"
+        class="sub-button"
+      >
+        ✎ 請求書を編集する
+      </a>
+
+      <p class="button-description">
+        内容を修正して、もう一度作成できます
+      </p>
+
+
+      <!-- トップ -->
+      <a
+        href="./index.html"
+        class="sub-button"
+      >
+        ⌂ トップへ戻る
+      </a>
+
+
+      <!-- セキュリティ -->
+      <div class="security-box">
+
+        <div class="security-icon">
+          🔒
+        </div>
+
+        <div>
+          <h2>
+            安全にご利用いただけます
+          </h2>
+
+          <p>
+            お支払い情報は安全に処理されます。
+            ご不明な点がございましたら、お問い合わせください。
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="success-footer">
+
+    <p>
+      © 2026 nanacone
+    </p>
+
+    <div class="footer-links">
+
+      <a href="#">
+        利用規約
+      </a>
+
+      <span>|</span>
+
+      <a href="#">
+        プライバシーポリシー
+      </a>
+
+      <span>|</span>
+
+      <a href="#">
+        特定商取引法に基づく表記
+      </a>
+
+    </div>
+
+  </footer>
+
+
+  <script src="../js/success.js"></script>
+
+</body>
+</html>

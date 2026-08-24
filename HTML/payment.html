@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お支払い | ナナコネ</title>
+  <link rel="stylesheet" href="../CSS/styles.css">
+  <link rel="stylesheet" href="../CSS/payment.css">
+</head>
+<body class="payment-body">
+  <nav class="topbar">
+    <div class="topbar-inner">
+     <div class="logo">ナナコネ</div>
+      <a href="./mypage.html" class="header-home" aria-label="マイページ">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 12c2.7614 0 5-2.2386 5-5s-2.2386-5-5-5-5 2.2386-5 5 2.2386 5 5 5z" fill="currentColor"/>
+          <path d="M3 20c0-3.866 3.582-7 9-7s9 3.134 9 7v1H3v-1z" fill="currentColor"/>
+        </svg>
+      </a>
+    </div>
+  </nav>
+
+  <main class="payment-page">
+    <header class="payment-header">
+      <h1>お支払い</h1>
+      <p>決済完了後、すぐにPDF（透かしなし）を保存できます。</p>
+    </header>
+
+    <section class="payment-panel">
+      <div class="payment-section">
+        <h2>① プランを選択</h2>
+        <div class="plan-grid">
+          <label class="plan-card selected">
+            <input type="radio" name="plan" value="330" checked>
+            <div class="plan-card-main">
+              <div class="plan-title-row">
+                <span class="plan-title">単発プラン</span>
+              </div>
+              <div class="plan-price">330円（税込）</div>
+              <ul class="plan-features single">
+                <li>✔ 登録不要</li>
+                <li>✔ 今すぐPDF</li>
+                <li>✔ 1回だけ利用</li>
+              </ul>
+              <div class="plan-cta-wrap">
+                <button type="button" class="plan-cta">このプランを選ぶ</button>
+              </div>
+            </div>
+          </label>
+
+          <label class="plan-card">
+            <input type="radio" name="plan" value="980">
+            <div class="plan-card-main">
+              <div class="plan-title-row">
+                <span class="plan-title">月額プラン</span>
+                <span class="plan-badge popular">人気 ★★★★★</span>
+              </div>
+              <div class="plan-price">980円 / 月（税込）</div>
+              <ul class="plan-features monthly">
+                <li class="feature-mypage">✔ マイページ</li>
+                <li>✔ 書類作成・ダウンロードし放題</li>
+                <li>✔ 過去のPDF確認</li>
+              </ul>
+              <div class="plan-cta-wrap">
+                <button type="button" class="plan-cta outline">無料でアカウント登録</button>
+              </div>
+            </div>
+          </label>
+        </div>
+        </div>
+      </div>
+
+      <div id="payment-method-section" class="payment-section">
+        <h2>② お支払い方法</h2>
+        <div class="method-grid">
+          <label class="method-card selected">
+            <input type="radio" name="method" value="card" checked>
+            <div class="method-card-main">
+              <div class="method-title-row">
+                <div class="method-check"><span></span></div>
+                <span class="method-label">クレジットカード</span>
+              </div>
+              <div class="brand-icons">
+                <img class="brand-icon" src="../img/VISA.jpg" alt="VISA">
+                <img class="brand-icon" src="../img/Mastercard.jpg" alt="Mastercard">
+                <img class="brand-icon" src="../img/JCB.jpg" alt="JCB">
+              </div>
+            </div>
+          </label>
+
+          <label class="method-card">
+            <input type="radio" name="method" value="paypay">
+            <div class="method-card-main">
+              <div class="method-title-row">
+                <div class="method-check"><span></span></div>
+                <img class="brand-icon paypay-icon" src="../img/PayPay.jpg" alt="PayPay">
+                <span class="method-label">PayPay</span>
+              </div>
+              <div class="brand-description">PayPayアプリでかんたん決済</div>
+            </div>
+          </label>
+        </div>
+
+        <div id="card-form" class="card-form">
+          <div class="form-row">
+            <label for="card-number">カード番号</label>
+            <input id="card-number" type="text" placeholder="1234 5678 9012 3456">
+          </div>
+          <div class="split-row">
+            <div class="form-row">
+              <label for="expiry-date">有効期限</label>
+              <input id="expiry-date" type="text" placeholder="MM / YY">
+            </div>
+            <div class="form-row">
+              <label for="security-code">セキュリティコード</label>
+              <input id="security-code" type="text" placeholder="123">
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="card-name">カード名義人</label>
+            <input id="card-name" type="text" placeholder="TARO NANACO">
+          </div>
+        </div>
+      </div>
+
+      <div class="payment-section">
+        <h2>お支払い金額</h2>
+        <div class="payment-summary">
+          <div class="summary-row">
+            <span id="payment-plan-name">単発プラン</span>
+            <span>￥<span id="payment-amount">330</span></span>
+          </div>
+          <div class="divider"></div>
+          <div class="summary-total">
+            <span>合計</span>
+            <span>￥<span id="payment-total">330</span>（税込）</span>
+          </div>
+        </div>
+
+       <!-- 月額プラン選択時 -->
+<div id="monthly-summary" style="display:none; margin-top:12px;">
+  <div class="monthly-box">
+
+    <p class="monthly-guide">
+      月額プランをご利用の方は、先にアカウントを作成してください。
+    </p>
+
+    <div class="plan-cta-wrap">
+      <button
+        id="monthly-register"
+        type="button"
+        class="plan-cta outline"
+      >
+        アカウント作成はこちら
+      </button>
+    </div>
+
+  </div>
+</div>
+
+        <div class="consent-row">
+          <label class="consent-label">
+            <input id="consent-checkbox" type="checkbox">
+            <span>
+  <a href="./terms.html" class="consent-link" target="_blank">
+    利用規約
+  </a>
+  および
+  <a href="./privacy.html" class="consent-link" target="_blank">
+    プライバシーポリシー
+  </a>
+  に同意します
+</span>
+          </label>
+        </div>
+
+        <div class="payment-actions">
+          <button id="purchase-button" class="primary-button disabled" disabled>￥330を支払う</button>
+          <button id="back-button" class="secondary-button" type="button">戻る</button>
+        </div>
+
+        <p class="payment-note">
+  決済完了後、すぐにPDFを保存できます。
+</p>
+
+<p class="payment-legal-link">
+  <a href="./legal.html" target="_blank">
+    特定商取引法に基づく表記
+  </a>
+</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/payment.js"></script>
+</body>
+</html>

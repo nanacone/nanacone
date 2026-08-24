@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>マイページ | ナナコネ</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="../CSS/mypage.css">
+</head>
+
+<body>
+
+  <header class="mypage-header">
+    <div class="mypage-header-inner">
+
+      <a href="./top.html" class="mypage-logo">
+        ナナコネ
+      </a>
+
+      <div class="mypage-header-actions">
+        <span class="header-user-name" id="header-user-name">読み込み中...</span>
+
+        <button type="button" class="logout-button">
+          ログアウト
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <div class="mypage-layout">
+
+    <!-- サイドメニュー -->
+    <aside class="mypage-sidebar">
+
+      <nav class="sidebar-nav" aria-label="マイページメニュー">
+
+       <a href="#" class="sidebar-link active" data-view="mypage-home">
+  マイページ
+</a>
+
+        <a href="#" class="sidebar-link" data-view="documents-view">
+  書類一覧
+</a>
+
+        <a href="./index.html?from=mypage" class="sidebar-link">
+  新しく作成
+</a>
+
+        <div class="sidebar-divider"></div>
+
+       <a href="#" class="sidebar-link" data-view="account-view">
+  アカウント
+</a>
+
+       <a href="#" class="sidebar-link" data-view="contract-view">
+  契約内容
+</a>
+
+      </nav>
+
+    </aside>
+
+
+    <!-- メイン -->
+    <main class="mypage-main">
+
+      <div class="mypage-main-inner">
+
+<div id="mypage-home" class="mypage-view active">
+
+        <section class="mypage-heading">
+          <p class="section-label">MY PAGE</p>
+
+          <h1>マイページ</h1>
+
+         <p class="mypage-welcome">
+  <span id="welcome-user-name">読み込み中...</span>さん、おかえりなさい。
+</p>
+        </section>
+
+
+        <!-- 新規作成 -->
+        <section class="create-document-area">
+
+          <div>
+            <h2>新しい書類を作成</h2>
+
+            <p>
+              新しい書類を作成します。
+            </p>
+          </div>
+
+          <a href="./index.html?from=mypage" class="create-document-button">
+  新しく作成する
+</a>
+
+        </section>
+
+
+        <!-- 最近の書類 -->
+        <section class="recent-documents">
+
+          <div class="section-title-row">
+            <div>
+              <p class="section-label">RECENT</p>
+              <h2>最近作成した書類</h2>
+            </div>
+
+            <a
+  href="#"
+  class="view-all-link"
+  data-view="documents-view"
+>
+  すべて見る
+</a>
+          </div>
+
+
+          <div class="document-table" id="recent-documents-table">
+
+  <div class="document-row document-head">
+    <span>取引先</span>
+    <span>請求書番号</span>
+    <span>発行日</span>
+    <span>金額</span>
+    <span></span>
+  </div>
+
+  <div id="recent-documents-body"></div>
+
+</div>
+
+        </section>
+
+      </div>
+<!-- =========================
+     書類一覧
+========================= -->
+
+<div id="documents-view" class="mypage-view">
+
+  <section class="mypage-heading">
+    <p class="section-label">DOCUMENTS</p>
+    <h1>書類一覧</h1>
+
+    <p class="mypage-welcome">
+      保存した書類を確認・管理できます。
+    </p>
+  </section>
+
+
+  <section class="documents-toolbar">
+
+    <div class="document-search">
+      <label for="document-search-input">
+        書類を検索
+      </label>
+
+      <input
+        type="search"
+        id="document-search-input"
+        placeholder="取引先名・請求書番号で検索"
+      >
+    </div>
+
+
+    <div class="document-sort">
+      <label for="document-sort-select">
+        並び順
+      </label>
+
+      <select id="document-sort-select">
+        <option value="newest">新しい順</option>
+        <option value="oldest">古い順</option>
+      </select>
+    </div>
+
+  </section>
+
+
+  <section class="documents-list">
+
+    <div class="document-table" id="documents-table">
+
+  <div class="document-row document-head">
+    <span>取引先</span>
+    <span>請求書番号</span>
+    <span>発行日</span>
+    <span>金額</span>
+    <span></span>
+  </div>
+
+  <!-- Supabaseから取得した保存済み書類がここに入る -->
+  <div id="documents-body"></div>
+  <div
+  id="documents-pagination"
+  class="documents-pagination"
+></div>
+
+</div>
+
+  </section>
+  </div>
+  <!-- =========================
+     アカウント
+========================= -->
+
+<div id="account-view" class="mypage-view">
+
+  <section class="mypage-heading">
+    <p class="section-label">ACCOUNT</p>
+
+    <h1>アカウント</h1>
+
+    <p class="mypage-welcome">
+      登録しているアカウント情報を確認・変更できます。
+    </p>
+  </section>
+
+
+  <section class="account-section">
+
+    <div class="account-card">
+
+      <div class="account-item">
+        <div class="account-item-text">
+          <span class="account-label">お名前</span>
+          <strong id="account-name">山田 太郎</strong>
+        </div>
+
+        <button type="button" class="account-edit-button">
+          変更する
+        </button>
+      </div>
+
+
+      <div class="account-item">
+        <div class="account-item-text">
+          <span class="account-label">メールアドレス</span>
+          <strong id="account-email">taro@example.com</strong>
+        </div>
+
+        <button type="button" class="account-edit-button">
+          変更する
+        </button>
+      </div>
+
+
+      <div class="account-item">
+        <div class="account-item-text">
+          <span class="account-label">パスワード</span>
+          <strong>••••••••</strong>
+        </div>
+
+        <button type="button" class="account-edit-button">
+          変更する
+        </button>
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+<!-- =========================
+     契約内容
+========================= -->
+
+<div id="contract-view" class="mypage-view">
+
+  <section class="mypage-heading">
+    <p class="section-label">PLAN</p>
+
+    <h1>契約内容</h1>
+
+    <p class="mypage-welcome">
+      現在ご利用中のプランと契約情報を確認できます。
+    </p>
+  </section>
+
+
+  <section class="contract-section">
+
+    <div class="contract-card">
+
+      <div class="contract-card-header">
+        <div>
+          <p class="contract-label">現在のプラン</p>
+          <h2>月額プラン</h2>
+        </div>
+
+        <span class="contract-status">
+          利用中
+        </span>
+      </div>
+
+
+      <div class="contract-price">
+        <strong>980</strong>
+        <span>円 / 月</span>
+      </div>
+
+
+      <div class="contract-details">
+
+        <div class="contract-detail-row">
+          <span>次回更新日</span>
+          <strong>2026年9月17日</strong>
+        </div>
+
+        <div class="contract-detail-row">
+          <span>お支払い方法</span>
+          <strong>クレジットカード</strong>
+        </div>
+
+        <div class="contract-detail-row">
+          <span>契約開始日</span>
+          <strong>2026年8月17日</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="contract-cancel-area">
+
+      <div>
+        <h2>プランの解約</h2>
+
+        <p>
+          月額プランを解約すると、次回更新日以降は
+          月額会員向けの機能をご利用いただけなくなります。
+        </p>
+      </div>
+
+      <button type="button" class="cancel-plan-button">
+        解約について確認する
+      </button>
+
+    </div>
+
+  </section>
+
+</div>
+</div>
+    </main>
+
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/mypage.js"></script>
+
+</body>
+</html>
