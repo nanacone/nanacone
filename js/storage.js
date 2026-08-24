@@ -1,4 +1,4 @@
-const STORAGE_KEY = 'nanacone_invoice_draft';
+const STORAGE_KEY = 'nanaconne_invoice_draft';
 
 function saveDraft() {
   const itemRows = document.querySelectorAll('.item-input-row');
@@ -28,6 +28,7 @@ function saveDraft() {
     bankAccount: bankAccountInput.value,
     paymentDate: paymentDateInput.value,
     note: noteInput.value,
+    stamp: typeof stampPreview !== 'undefined' ? stampPreview.src : '',
 
     items: items
   };
@@ -55,6 +56,10 @@ function loadDraft() {
   bankAccountInput.value = draft.bankAccount || '';
   paymentDateInput.value = draft.paymentDate || '';
   noteInput.value = draft.note || '';
+  if (draft.stamp && stampPreview && invoiceStamp) {
+    stampPreview.src = draft.stamp;
+    invoiceStamp.classList.add('has-image');
+  }
 
   if (draft.items && draft.items.length > 0) {
     itemsContainer.innerHTML = '';
@@ -66,14 +71,12 @@ function loadDraft() {
       row.innerHTML = `
         <input class="item-name" type="text" placeholder="品目" value="${item.name || ''}">
         <input class="item-qty" type="number" value="${item.qty || 1}">
-        <select class="item-unit">
-          <option value="式">式</option>
-          <option value="個">個</option>
-          <option value="件">件</option>
-          <option value="時間">時間</option>
-          <option value="日">日</option>
-          <option value="月">月</option>
-        </select>
+        <input
+  class="item-unit"
+  type="text"
+  value="${item.unit || ''}"
+  placeholder="例：個、式、L"
+>
         <input class="item-unit-price" type="number" value="${item.unitPrice || 0}">
         <button type="button" class="delete-item-button">削除</button>
       `;

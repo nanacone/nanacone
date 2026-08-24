@@ -1,13 +1,21 @@
 const pdfDownloadButton = document.getElementById('pdf-download-button');
 
-pdfDownloadButton.addEventListener('click', () => {
-  const watermark = document.querySelector('.sample-watermark');
+if (pdfDownloadButton) {
+  pdfDownloadButton.addEventListener('click', () => {
 
-  watermark.style.display = 'none';
+    const watermark = document.querySelector('.sample-watermark');
 
-  window.print();
+    if (watermark) {
+      watermark.style.display = 'none';
+    }
 
-  setTimeout(() => {
-    watermark.style.display = 'block';
-  }, 1000);
-});
+    window.print();
+
+    setTimeout(() => {
+      if (watermark) {
+        watermark.style.display = 'block';
+      }
+    }, 1000);
+
+  });
+}
